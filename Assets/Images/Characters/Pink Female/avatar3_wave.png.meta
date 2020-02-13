@@ -1,0 +1,1339 @@
+fileFormatVersion: 2
+guid: 89190750739136947bfc9e96fbe48088
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: avatar3_wave_0
+  - first:
+      213: 21300002
+    second: avatar3_wave_1
+  - first:
+      213: 21300004
+    second: avatar3_wave_2
+  - first:
+      213: 21300006
+    second: avatar3_wave_3
+  - first:
+      213: 21300008
+    second: avatar3_wave_4
+  - first:
+      213: 21300010
+    second: avatar3_wave_5
+  - first:
+      213: 21300012
+    second: avatar3_wave_6
+  - first:
+      213: 21300014
+    second: avatar3_wave_7
+  - first:
+      213: 21300016
+    second: avatar3_wave_8
+  - first:
+      213: 21300018
+    second: avatar3_wave_9
+  - first:
+      213: 21300020
+    second: avatar3_wave_10
+  - first:
+      213: 21300022
+    second: avatar3_wave_11
+  - first:
+      213: 21300024
+    second: avatar3_wave_12
+  - first:
+      213: 21300026
+    second: avatar3_wave_13
+  - first:
+      213: 21300028
+    second: avatar3_wave_14
+  - first:
+      213: 21300030
+    second: avatar3_wave_15
+  - first:
+      213: 21300032
+    second: avatar3_wave_16
+  - first:
+      213: 21300034
+    second: avatar3_wave_17
+  - first:
+      213: 21300036
+    second: avatar3_wave_18
+  - first:
+      213: 21300038
+    second: avatar3_wave_19
+  - first:
+      213: 21300040
+    second: avatar3_wave_20
+  - first:
+      213: 21300042
+    second: avatar3_wave_21
+  - first:
+      213: 21300044
+    second: avatar3_wave_22
+  - first:
+      213: 21300046
+    second: avatar3_wave_23
+  - first:
+      213: 21300048
+    second: avatar3_wave_24
+  - first:
+      213: 21300050
+    second: avatar3_wave_25
+  - first:
+      213: 21300052
+    second: avatar3_wave_26
+  - first:
+      213: 21300054
+    second: avatar3_wave_27
+  - first:
+      213: 21300056
+    second: avatar3_wave_28
+  - first:
+      213: 21300058
+    second: avatar3_wave_29
+  - first:
+      213: 21300060
+    second: avatar3_wave_30
+  - first:
+      213: 21300062
+    second: avatar3_wave_31
+  - first:
+      213: 21300064
+    second: avatar3_wave_32
+  - first:
+      213: 21300066
+    second: avatar3_wave_33
+  - first:
+      213: 21300068
+    second: avatar3_wave_34
+  - first:
+      213: 21300070
+    second: avatar3_wave_35
+  - first:
+      213: 21300072
+    second: avatar3_wave_36
+  - first:
+      213: 21300074
+    second: avatar3_wave_37
+  - first:
+      213: 21300076
+    second: avatar3_wave_38
+  - first:
+      213: 21300078
+    second: avatar3_wave_39
+  - first:
+      213: 21300080
+    second: avatar3_wave_40
+  - first:
+      213: 21300082
+    second: avatar3_wave_41
+  - first:
+      213: 21300084
+    second: avatar3_wave_42
+  - first:
+      213: 21300086
+    second: avatar3_wave_43
+  - first:
+      213: 21300088
+    second: avatar3_wave_44
+  - first:
+      213: 21300090
+    second: avatar3_wave_45
+  - first:
+      213: 21300092
+    second: avatar3_wave_46
+  - first:
+      213: 21300094
+    second: avatar3_wave_47
+  - first:
+      213: 21300096
+    second: avatar3_wave_48
+  - first:
+      213: 21300098
+    second: avatar3_wave_49
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: 1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 4096
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: avatar3_wave_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5103
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 666f22fa70719ec45a1c14f7a1ccbde4
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 5103
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4449673e512b3f4ebca965909cb12af
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 5103
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 661eab3945bfad943998d0092490329a
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 5103
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a71307fc09bbd64aad212d707376cb6
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_4
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 5103
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc4ea5a2e0d21d47915f8f3f2e883db
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4536
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77fc2e4c4317e9045a38914b2cbe6294
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_6
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 4536
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d8696cf073ec94a890e37dba22348f
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_7
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 4536
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87c1192760e19874e9970f3a4fdcc382
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_8
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 4536
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f7d353ec6a00864bada2361923ad9c2
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_9
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 4536
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57c38b591b0e6b045b6f30605a6cda93
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3969
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b81178f8bd8af1948b7c2210e33c57f6
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_11
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 3969
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5507933f44d51e14ab67ecf49bd311bd
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_12
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 3969
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e1af23fe4cf8a7438960937f7d126a9
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_13
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 3969
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04ade7a5d9eb6ec4a9a184fc7600b7a3
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_14
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 3969
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f638f4110e91174799df8c7d269d896
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3402
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ef30ccdb8863449817f3a0881d3a68
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_16
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 3402
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 939621a037600b64089fc19274dc0ada
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_17
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 3402
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 620f52b6f7b39ac42b5cdf08856cad61
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_18
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 3402
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37517b285555593438b3da0a439bf35c
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_19
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 3402
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ebd010dc5d7ac444bb2e274e21a5f30
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2835
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382ff3be6420ea14a8a48626ced806a5
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_21
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 2835
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80a9223f900cff74494d23a0b6b453fa
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_22
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 2835
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1eb8d4c5a2adac4dad2fa6a9d4d7de5
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_23
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 2835
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cbc3a96f2e1dc04fa6cf7cbc6e23dc1
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_24
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 2835
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a90514777ecf624894ed3cfcf7c1548
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2268
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 851e73b15c9ed9444a84971c02070fd6
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_26
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 2268
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c6d6d62c8461d74dbdf97878527eb5a
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_27
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 2268
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beefa8d9e24399a44a4eecc1ede8538b
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_28
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 2268
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750aefbf3c3f09c49ac554c6d751c7eb
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_29
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 2268
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b43627f135836b045a41757d56e3a995
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1701
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfba8fef8e0e95f4b865f5ef9c877f70
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_31
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1701
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e69402f5c2988f341bdcb7c9a90b4571
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_32
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1701
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ef4a743f204784d82efdc9e3b23d97
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_33
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1701
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f59a87b74f26f924c8b9cd1c3d26596a
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_34
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1701
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e2f7180a901f1545b9a9c6099fe88f9
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1134
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d964199805a8b5e4084c7459bb2b3eb2
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_36
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1134
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2525e5b570d83904b99f477a9f75b331
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_37
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1134
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf476b58b529a9f43ae74c96959961c7
+      internalID: 21300074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_38
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 1134
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 615617c0544d1c34eb39a0533acbd08a
+      internalID: 21300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_39
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1134
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c387dc8244d29f49b61b90b9fdb1da9
+      internalID: 21300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 567
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76c58a114fc25f04f982a0ae0816d1e0
+      internalID: 21300080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_41
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 567
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1f09d10edb1cbf48a9daaea058c13fa
+      internalID: 21300082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_42
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 567
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3183db49b7fa4a349b13b35c10653ddb
+      internalID: 21300084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_43
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 567
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f39041e1437ef9041b005bcc1639a780
+      internalID: 21300086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_44
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 567
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5aa5a16345eb245a2e322cd0871161
+      internalID: 21300088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e776dfa607c014144a9fa42d3f482823
+      internalID: 21300090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_46
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf01fd8b1bd751f42ba4b3b792f23e21
+      internalID: 21300092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_47
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 628b466fe36499b4d90a6e83db1bb4b8
+      internalID: 21300094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_48
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01aeb9ed3914f6c4fa90cd9664171c57
+      internalID: 21300096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avatar3_wave_49
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 400
+        height: 550
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9581e6eb1193584c83a71245e5e869b
+      internalID: 21300098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 51e71754b396a4448a2212d7b20ed16e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
