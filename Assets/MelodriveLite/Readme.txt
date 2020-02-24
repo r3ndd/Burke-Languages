@@ -4,7 +4,7 @@
     /_/  /_/\__/_/\___/\_,_/_/ /_/|___/\__/
 
 
-# Melodrive Lite Unity SDK v0.4.1
+# Melodrive Lite Unity SDK v0.4.3
 
 **Please note that this is beta software and so there may be bugs and crashes!**
 

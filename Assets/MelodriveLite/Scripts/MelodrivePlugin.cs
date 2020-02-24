@@ -140,10 +140,14 @@ namespace Melodrive
         private static extern void md_initAnalytics([MarshalAs(UnmanagedType.LPStr)] string path);
 
         [DllImport(DLL_NAME)]
-        private static extern void md_setInstrumentsPath([MarshalAs(UnmanagedType.LPStr)] string path);
+        private static extern void md_addInstrumentsPath([MarshalAs(UnmanagedType.LPStr)] string path);
 
         [DllImport(DLL_NAME)]
         private static extern void md_init([MarshalAs(UnmanagedType.LPStr)] string style, [MarshalAs(UnmanagedType.LPStr)] string initEmotion);
+
+
+        [DllImport(DLL_NAME, CallingConvention = CallingConvention.Cdecl)]
+        private static extern void md_update();
 
         /**
          * Sets the Melodrive AudioPlugin to load instruments from the StreamingAssets folder
@@ -167,7 +171,7 @@ namespace Melodrive
             }
 
             instrumentsPath = path;
-            md_setInstrumentsPath(path);
+            md_addInstrumentsPath(path);
         }
 
         public string GetInstrumentsPath()
@@ -285,6 +289,7 @@ namespace Melodrive
                 prevChiptuneMode = chiptuneMode;
             }
 
+            md_update();
             HandleMessages();
         }
 
