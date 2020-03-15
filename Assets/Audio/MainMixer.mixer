@@ -4,20 +4,23 @@
 AudioMixerController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: MelodriveMixer
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MainMixer
   m_OutputGroup: {fileID: 0}
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
   - {fileID: 24500006}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
-  m_EnableSuspend: 0
+  m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: f74b5ad9327ad654ab5381cf8feea80c
+    name: volume
   m_AudioMixerGroupViews:
   - guids:
-    - bcd649c3e83a2af4eb0986c1b767f522
+    - cbb52bbf2b56a2549993ddae03382136
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -25,15 +28,16 @@ AudioMixerController:
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Master
   m_AudioMixer: {fileID: 24100000}
-  m_GroupID: bcd649c3e83a2af4eb0986c1b767f522
+  m_GroupID: cbb52bbf2b56a2549993ddae03382136
   m_Children: []
-  m_Volume: b2b2d860135737e44858ea64d66645ec
-  m_Pitch: 8c1c2b6c621ad25408c34065346b3add
+  m_Volume: f74b5ad9327ad654ab5381cf8feea80c
+  m_Pitch: 9371793541327a142895c7373ff6f80e
+  m_Send: 00000000000000000000000000000000
   m_Effects:
-  - {fileID: 244772387490273922}
   - {fileID: 24400004}
   m_UserColorIndex: 0
   m_Mute: 0
@@ -43,11 +47,12 @@ AudioMixerGroupController:
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_EffectID: 5a9f14d1179e38a4cabc9bf896d4f2c6
+  m_EffectID: 01d0fcd37c8ca3447b8396aa8cdc0e05
   m_EffectName: Attenuation
-  m_MixLevel: f6c49ccea3037e54db795616ac931a53
+  m_MixLevel: 670b6df1d22fda94fa9fc31f958f6599
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
@@ -56,27 +61,10 @@ AudioMixerEffectController:
 AudioMixerSnapshotController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
-  m_SnapshotID: 1c847a71d59db7c4ca4fe4e67a0de912
-  m_FloatValues:
-    e7a1466f48ba21c4aab3281c06851f60: 0.7
+  m_SnapshotID: 9bf7a72eeea1adc47a0007751259a895
+  m_FloatValues: {}
   m_TransitionOverrides: {}
---- !u!244 &244772387490273922
-AudioMixerEffectController:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: 
-  m_EffectID: 1e829bed08eee2947857659a7f19855e
-  m_EffectName: Melodrive
-  m_MixLevel: 400fed27532d1244099615e798f32711
-  m_Parameters:
-  - m_ParameterName: Master Gain
-    m_GUID: e7a1466f48ba21c4aab3281c06851f60
-  - m_ParameterName: Limiter Enabled
-    m_GUID: 639a6b06a9a12e14b8735418a6e8ac67
-  m_SendTarget: {fileID: 0}
-  m_EnableWetMix: 0
-  m_Bypass: 0
