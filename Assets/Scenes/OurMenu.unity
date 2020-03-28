@@ -7775,7 +7775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   langDrop: {fileID: 1802922308}
   gramDrop: {fileID: 1894935251}
-  volumeSlider: {fileID: 0}
+  volumeSlider: {fileID: 573487934}
   mixer: {fileID: 24100000, guid: 8511780ee0eaf3e469004f3d0aec5a00, type: 2}
 --- !u!4 &1211618300
 Transform:
