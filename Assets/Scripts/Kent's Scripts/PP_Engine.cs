@@ -5,10 +5,16 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class PP_Engine : MonoBehaviour
 {
 
     string answer = "Estoy cocinando.";
+    string[] questions = new string[] { "I'm cooking.", "I'm baking.", "I'm cutting.", "I'm making food.", "I'm getting ready." };
+    string[] answers = new string[] { "Estoy cocinando.", "Estoy horneando.", "Estoy cortando.", "Estoy haciendo comida.", "Me estoy preparando"};
+    System.Random rnd = new System.Random(5);
+    int QANum = 0;
+    public TMPro.TextMeshProUGUI question;
     public TMPro.TextMeshProUGUI reply;
     int points;
     public TMPro.TextMeshProUGUI score;
@@ -16,7 +22,15 @@ public class PP_Engine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        QANum = rnd.Next(5);
         points = 0;
+    }
+
+    public void changeQA()
+    {
+        QANum = rnd.Next(5);
+        question.text = questions[QANum];
+        answer = answers[QANum];
     }
 
     public void check()
@@ -42,4 +56,5 @@ public class PP_Engine : MonoBehaviour
             score.text = "Wrong" + "\n" + answer + "\n" + raw.Substring(0,raw.Length - 9) + "\n#\n" + raw2;
         }
     }
+
 }
