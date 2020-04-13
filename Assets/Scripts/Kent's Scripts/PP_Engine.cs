@@ -18,6 +18,7 @@ public class PP_Engine : MonoBehaviour
     public TMPro.TextMeshProUGUI reply;
     int points;
     public TMPro.TextMeshProUGUI score;
+    public Transform cam;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,17 @@ public class PP_Engine : MonoBehaviour
         QANum = rnd.Next(5);
         question.text = questions[QANum];
         answer = answers[QANum];
+        Debug.Log(cam.rotation.y < 90);
+        if (cam.position.x < 50)
+        {
+            Vector3 temp = new Vector3(8.5f, 0f, 0f);
+            cam.position += temp;
+        }
+        else if(true)
+        {
+            Debug.Log("Turning?");
+            cam.rotation.
+        
     }
 
     public void check()
@@ -49,6 +61,7 @@ public class PP_Engine : MonoBehaviour
         {
             points++;
             score.text = "Score: " + points.ToString();
+            changeQA();
             
         }
         else
