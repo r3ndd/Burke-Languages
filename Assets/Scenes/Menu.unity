@@ -810,6 +810,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4378754096511773278, guid: 90771d8f5ce092e42bd7ce89368b9bce,
+        type: 3}
+      propertyPath: m_text
+      value: Kitchen
+      objectReference: {fileID: 0}
     - target: {fileID: 4378754096779616996, guid: 90771d8f5ce092e42bd7ce89368b9bce,
         type: 3}
       propertyPath: m_Name
@@ -13394,7 +13399,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1395792511}
-        m_MethodName: toPlayground
+        m_MethodName: toPP_Game
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
