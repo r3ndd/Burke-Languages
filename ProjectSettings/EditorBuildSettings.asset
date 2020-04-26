@@ -26,7 +26,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Deprecated/DepGame3.unity
     guid: 1f89dbfba8ccf7048a73969dfb90a9d7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ElliotsTest.unity
     guid: 16d6a8448d9238148a5cd3284cccfa8e
   - enabled: 1

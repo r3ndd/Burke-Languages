@@ -25,10 +25,12 @@ public class PP_Engine : MonoBehaviour
     public viewData view4;
     public viewData view5;
     public viewData view6;
-    public questionHandler questionEngine;
+    public viewData view7;
+    public viewData view8;
+    private questionHandler questionEngine;
     string answer;
     int points;
-    public int playTo = 5;
+    private int playTo = 8;
 
 
 
@@ -41,12 +43,14 @@ public class PP_Engine : MonoBehaviour
     void Start()
     {
         questionEngine = new questionHandler(new question[]{
-            new question(new string[]{ "Apple", "la manzana"}, view2,
-                new question(new string[]{"cut apple", "la manzana cortada" }, view4, null)),
-            new question(new string[]{"bread", "el pan" }, view1, 
-                new question(new string[]{"sliced bread", "el pan cortado" }, view5, null)),
-            new question(new string[]{"potato", "la papa" }, view6, null),
-            new question(new string[]{"toaster", "la tostadora"}, view3, null)}, 5);
+            new question(new string[]{ "Apple", "una manzana"}, view2,
+                new question(new string[]{"cut apple", "una manzana cortada" }, view4, null)),
+            new question(new string[]{"bread", "el pan" }, view1,
+                new question(new string[]{"slice of bread", "un pedazo de pan" }, view5, null)),
+            new question(new string[]{"potato", "una papa" }, view6, null),
+            new question(new string[]{"toaster", "la tostadora"}, view3, null),
+            new question(new string[]{"plate", "el plato"}, view7,
+                new question(new string[]{"plates", "los platos" }, view8, null))}, 12);
         
         //Initialize GUI
         //question.text = questionEngine.currentQuestion.getText(0);
