@@ -59,8 +59,8 @@ LightmapSettings:
     m_BakeResolution: 45
     m_AtlasSize: 1024
     m_AO: 1
-    m_AOMaxDistance: 1
-    m_CompAOExponent: 1
+    m_AOMaxDistance: 0.7
+    m_CompAOExponent: 0.1
     m_CompAOExponentDirect: 0
     m_ExtractAmbientOcclusion: 0
     m_Padding: 2
@@ -75,10 +75,10 @@ LightmapSettings:
     m_MixedBakeMode: 2
     m_BakeBackend: 2
     m_PVRSampling: 1
-    m_PVRDirectSampleCount: 512
-    m_PVRSampleCount: 512
+    m_PVRDirectSampleCount: 32
+    m_PVRSampleCount: 256
     m_PVRBounces: 4
-    m_PVREnvironmentSampleCount: 512
+    m_PVREnvironmentSampleCount: 128
     m_PVREnvironmentReferencePointCount: 2048
     m_PVRFilteringMode: 1
     m_PVRDenoiserTypeDirect: 2
