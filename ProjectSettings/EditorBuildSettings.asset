@@ -27,18 +27,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Deprecated/DepGame3.unity
     guid: 1f89dbfba8ccf7048a73969dfb90a9d7
   - enabled: 0
-    path: Assets/Scenes/ElliotsTest.unity
+    path: Assets/Scenes/Deprecated/ElliotsTest.unity
     guid: 16d6a8448d9238148a5cd3284cccfa8e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu.unity
     guid: f741237d61e68e648b6e3adf86c98a83
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Playground.unity
     guid: 3b4251923f9e91643b5ce84132a6cf7c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/VocabReview.unity
     guid: 4af9a9b77e7d61143b3b75fd8320adfd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PP_Game.unity
     guid: c3558c0a2ff002d40aa2e243f0ca043a
+  - enabled: 0
+    path: Assets/Scenes/Voice Recognition.unity
+    guid: bd1bad34e1a6da0419cc77bc1fef7e7a
+  - enabled: 1
+    path: Assets/Scenes/New Kitchen.unity
+    guid: 2264a5b715ebded4d8bb39199b7bf4d4
   m_configObjects: {}
