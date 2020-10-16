@@ -64,13 +64,13 @@ public class TextToSpeech : MonoBehaviour
             int rightIndex = i;
             bool matchedChar;
 
-            while (leftIndex > 0 || rightIndex < input.Length)
+            while (leftIndex >= 0 || rightIndex < input.Length)
             {
                 matchedChar = false;
 
-                if (leftIndex > 0 && input[leftIndex] == target[i])
+                if (leftIndex >= 0 && leftIndex < input.Length && input[leftIndex] == target[i])
                     matchedChar = true;
-                else if (rightIndex < input.Length && input[rightIndex] == target[i])
+                else if (rightIndex >= 0 && rightIndex < input.Length && input[rightIndex] == target[i])
                     matchedChar = true;
 
                 if (matchedChar)
