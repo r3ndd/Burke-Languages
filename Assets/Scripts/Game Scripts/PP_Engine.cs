@@ -5,71 +5,66 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-//this approach doesn't seem like it will work
-//instead try making a component to attach to a game object that will provide the needed data and form a node in a linked list in a series
-//create an end for the series
-
-
-
 public class PP_Engine : MonoBehaviour
 {
-    private GoToScene door = new GoToScene();
     public TMPro.TextMeshProUGUI question;
     public TMPro.TextMeshProUGUI reply;
     public TMPro.TextMeshProUGUI score;
+    public Button speakBtn;
     public Transform cam;
-    public CameraController cameraRigging;
-    public ViewData view1;
-    public ViewData view2;
-    public ViewData view3;
-    public ViewData view4;
-    public ViewData view5;
-    public ViewData view6;
-    public ViewData view7;
-    public ViewData view8;
+    public float startAnimDist;
+    public float voiceRecogScoreThresh = 0.5f;
+    public GameObject[] targets;
+
+    private GoToScene door = new GoToScene();
+    private CameraController cameraRigging;
+    private Question[] questions;
     private QuestionHandler questionEngine;
-    string answer;
-    int points;
+    private TextToSpeech textToSpeech;
+    private string answer;
+    private int points;
     private int playTo = 8;
 
-
-
-    
-    //public questionHandler questionEngine;
-
-    //public Transform[] targets;
-
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        questionEngine = new QuestionHandler(new Question[]{
-            new Question(new string[]{ "Apple", "una manzana"}, view2,
-                new Question(new string[]{"cut apple", "una manzana cortada" }, view4, null)),
-            new Question(new string[]{"bread", "el pan" }, view1,
-                new Question(new string[]{"slice of bread", "un pedazo de pan" }, view5, null)),
-            new Question(new string[]{"potato", "una papa" }, view6, null),
-            new Question(new string[]{"toaster", "la tostadora"}, view3, null),
-            new Question(new string[]{"plate", "el plato"}, view7,
-                new Question(new string[]{"plates", "los platos" }, view8, null))}, 12);
-        
-        //Initialize GUI
-        //question.text = questionEngine.currentQuestion.getText(0);
-        answer = questionEngine.currentQuestion.GetText(questionEngine.targetLanguage);
-        cameraRigging.ChangeView(questionEngine.currentQuestion.GetTarget());
-        points = 0;
+        cameraRigging = cam.GetComponent<CameraController>();
+        textToSpeech = GetComponent<TextToSpeech>();
 
+        for (int i = 0; i < targets.Length; i++)
+            targets[i].SetActive(false);
+
+        string[][] questionTexts = new string[5][];
+        questionTexts[0] = new string[] { "washing potato", "levando la papa" };
+        questionTexts[1] = new string[] { "drying hands", "secar las manos" };
+        questionTexts[2] = new string[] { "cutting potato", "cortar papa" };
+        questionTexts[3] = new string[] { "cooking potato", "cocinar papas fritas" };
+        questionTexts[4] = new string[] { "eating potato", "comiendo papas fritas" };
+
+        questionEngine = new QuestionHandler(questionTexts, targets);
+        answer = questionEngine.GetQuestion().GetText();
+        cameraRigging.ChangeView(questionEngine.GetQuestion().GetView());
+        points = 0;
+    }
+
+    private void Update()
+    {
+        Question question = questionEngine.GetQuestion();
+        GameObject questionTarget = question.GetTarget();
+        Transform questionView = question.GetView();
+
+        if (!questionTarget.activeSelf && Vector3.Distance(cam.position, questionView.position) < startAnimDist)
+            question.PlayAnimation();
     }
 
     public void ChangeQA()
     {
-        if(points == playTo)
-        {
+        if (points == playTo)
             door.ToMenu();
-        }
+
         questionEngine.NextQuestion();
-        //question.text = questionEngine.currentQuestion.getText(0);
-        answer = questionEngine.currentQuestion.GetText(questionEngine.targetLanguage);
-        cameraRigging.ChangeView(questionEngine.currentQuestion.GetTarget());
+        answer = questionEngine.GetQuestion().GetText();
+        cameraRigging.ChangeView(questionEngine.GetQuestion().GetView());
     }
 
     public void Check()
@@ -79,22 +74,42 @@ public class PP_Engine : MonoBehaviour
         string raw = BitConverter.ToString(bites);
         byte[] bites2 = Encoding.Default.GetBytes(answer.ToLower());
         string raw2 = BitConverter.ToString(bites2);
-        if(raw.Length == 8)
+
+        if (raw.Length == 8)
         {
             score.text = "No Answer.";
             return;
         }
-        if (raw2.Equals(raw.Substring(0,raw.Length - 9)))
+
+        if (raw2.Equals(raw.Substring(0, raw.Length - 9)))
         {
             points++;
             score.text = "Score: " + points.ToString();
             ChangeQA();
-            
         }
         else
         {
-            score.text = "Wrong";// + "\n" + answer + "\n" + raw.Substring(0,raw.Length - 9) + "\n#\n" + raw2;
+            score.text = "Wrong";
         }
+    }
+
+    public void VoiceRecogListen()
+    {
+        speakBtn.enabled = false;
+
+        textToSpeech.ListenAndScore(answer, (s) =>
+        {
+            speakBtn.enabled = true;
+
+            if (s >= voiceRecogScoreThresh)
+            {
+                points++;
+                score.text = "Score: " + points.ToString() + " " + s.ToString();
+                ChangeQA();
+            }
+            else
+                score.text = "Wrong " + s.ToString();
+        });
     }
 
 }
