@@ -1,0 +1,310 @@
+fileFormatVersion: 2
+guid: 054af0456dc92c24f97f527fba372e82
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bone
+    100002: Bone 1
+    100004: Bone.001
+    100006: Bone.001 1
+    100008: Bone.002
+    100010: Bone.002 1
+    100012: Bone.003
+    100014: Bone.003 1
+    100016: Bone.004
+    100018: Bone.004 1
+    100020: Bone.005
+    100022: Bone.005 1
+    100024: Bone.005_end
+    100026: Bone.005_end 1
+    100028: Bone.005_end_end
+    100030: Bone.005_end_end 1
+    100032: Bone.006
+    100034: Bone.006 1
+    100036: Bone.007
+    100038: Bone.007 1
+    100040: Bone.008
+    100042: Bone.008 1
+    100044: Bone.009
+    100046: Bone.009 1
+    100048: Bone.009_end
+    100050: Bone.009_end 1
+    100052: Bone.009_end_end
+    100054: Bone.009_end_end 1
+    100056: Bone.010
+    100058: Bone.010 1
+    100060: Bone.011
+    100062: Bone.011 1
+    100064: Bone.012
+    100066: Bone.012 1
+    100068: Bone.013
+    100070: Bone.013 1
+    100072: Bone.013_end
+    100074: Bone.013_end 1
+    100076: Bone.013_end_end
+    100078: Bone.013_end_end 1
+    100080: Bone.014
+    100082: Bone.014 1
+    100084: Bone.015
+    100086: Bone.015 1
+    100088: Bone.016
+    100090: Bone.016 1
+    100092: Bone.017
+    100094: Bone.017 1
+    100096: Bone.017_end
+    100098: Bone.017_end 1
+    100100: Bone.017_end_end
+    100102: Bone.017_end_end 1
+    100104: Bone.018
+    100106: Bone.018 1
+    100108: Bone.019
+    100110: Bone.019 1
+    100112: Bone.020
+    100114: Bone.020 1
+    100116: Bone.020_end
+    100118: Bone.020_end 1
+    100120: Bone.020_end_end
+    100122: Bone.020_end_end 1
+    100124: Cube
+    100126: //RootNode
+    100128: Left Hand
+    100130: Left Hand.002
+    100132: Left Hand.003
+    100134: Right Hand
+    400000: Bone
+    400002: Bone 1
+    400004: Bone.001
+    400006: Bone.001 1
+    400008: Bone.002
+    400010: Bone.002 1
+    400012: Bone.003
+    400014: Bone.003 1
+    400016: Bone.004
+    400018: Bone.004 1
+    400020: Bone.005
+    400022: Bone.005 1
+    400024: Bone.005_end
+    400026: Bone.005_end 1
+    400028: Bone.005_end_end
+    400030: Bone.005_end_end 1
+    400032: Bone.006
+    400034: Bone.006 1
+    400036: Bone.007
+    400038: Bone.007 1
+    400040: Bone.008
+    400042: Bone.008 1
+    400044: Bone.009
+    400046: Bone.009 1
+    400048: Bone.009_end
+    400050: Bone.009_end 1
+    400052: Bone.009_end_end
+    400054: Bone.009_end_end 1
+    400056: Bone.010
+    400058: Bone.010 1
+    400060: Bone.011
+    400062: Bone.011 1
+    400064: Bone.012
+    400066: Bone.012 1
+    400068: Bone.013
+    400070: Bone.013 1
+    400072: Bone.013_end
+    400074: Bone.013_end 1
+    400076: Bone.013_end_end
+    400078: Bone.013_end_end 1
+    400080: Bone.014
+    400082: Bone.014 1
+    400084: Bone.015
+    400086: Bone.015 1
+    400088: Bone.016
+    400090: Bone.016 1
+    400092: Bone.017
+    400094: Bone.017 1
+    400096: Bone.017_end
+    400098: Bone.017_end 1
+    400100: Bone.017_end_end
+    400102: Bone.017_end_end 1
+    400104: Bone.018
+    400106: Bone.018 1
+    400108: Bone.019
+    400110: Bone.019 1
+    400112: Bone.020
+    400114: Bone.020 1
+    400116: Bone.020_end
+    400118: Bone.020_end 1
+    400120: Bone.020_end_end
+    400122: Bone.020_end_end 1
+    400124: Cube
+    400126: //RootNode
+    400128: Left Hand
+    400130: Left Hand.002
+    400132: Left Hand.003
+    400134: Right Hand
+    2100000: Material.006
+    2100002: Material.005
+    2100004: Material.001
+    2300000: Cube
+    3300000: Cube
+    4300000: Cube
+    4300002: Left Hand.003
+    4300004: Left Hand.002
+    7400000: Cube|Cube|Cube|CameraAction|Cube|CameraAction
+    7400002: Cube|Cube|Cube|CameraAction|Cube|CameraAction.001
+    7400004: Cube|Cube|Cube|CubeAction.001|Cube|CubeAction.000
+    7400006: Cube|Cube|Cube|CubeAction.001|Cube|CubeAction.001
+    7400008: Cube|Cube|Cube|CubeAction.003|Cube|CubeAction.000
+    7400010: Cube|Cube|Cube|CubeAction.003|Cube|CubeAction.003
+    7400012: Cube|Cube|Cube|CubeAction|Cube|CubeAction
+    7400014: Cube|Cube|Cube|CubeAction|Cube|CubeAction.001
+    7400016: Right Hand|Cube|Cube|CameraAction|Cube|CameraAction
+    7400018: Right Hand|Cube|Cube|CameraAction|Cube|CameraAction.001
+    7400020: Right Hand|Cube|Cube|CubeAction.001|Cube|CubeAction.000
+    7400022: Right Hand|Cube|Cube|CubeAction.001|Cube|CubeAction.001
+    7400024: Right Hand|Cube|Cube|CubeAction.003|Cube|CubeAction.000
+    7400026: Right Hand|Cube|Cube|CubeAction.003|Cube|CubeAction.003
+    7400028: Right Hand|Cube|Cube|CubeAction|Cube|CubeAction
+    7400030: Right Hand|Cube|Cube|CubeAction|Cube|CubeAction.001
+    7400032: Right Hand|Left Hand.001|Left Hand|ArmatureAction.003|Left Hand|ArmatureAc
+    7400034: Right Hand|Left Hand.001|Left Hand|ArmatureAction|Left Hand|ArmatureAction
+    7400036: Right Hand|Left Hand.001|Left Hand|CameraAction|Left Hand|CameraAction
+    7400038: Right Hand|Left Hand.001|Left Hand|CubeAction.001|Left Hand|CubeAction.001
+    7400040: Right Hand|Left Hand.001|Left Hand|CubeAction.003|Left Hand|CubeAction.003
+    7400042: Right Hand|Left Hand.001|Left Hand|CubeAction|Left Hand|CubeAction
+    7400044: Right Hand|Left Hand|Left Hand|ArmatureAction.003|Left Hand|ArmatureAction
+    7400046: Right Hand|Left Hand|Left Hand|ArmatureAction|Left Hand|ArmatureAction
+    7400048: Right Hand|Left Hand|Left Hand|CameraAction|Left Hand|CameraAction
+    7400050: Right Hand|Left Hand|Left Hand|CubeAction.001|Left Hand|CubeAction.001
+    7400052: Right Hand|Left Hand|Left Hand|CubeAction.003|Left Hand|CubeAction.003
+    7400054: Right Hand|Left Hand|Left Hand|CubeAction|Left Hand|CubeAction
+    7400056: Right Hand|Right Hand|Right Hand|ArmatureAction.003|Right Hand|Armatur.000
+    7400058: Right Hand|Right Hand|Right Hand|ArmatureAction.003|Right Hand|ArmatureAct
+    7400060: Right Hand|Right Hand|Right Hand|ArmatureAction|Right Hand|ArmatureAct.000
+    7400062: Right Hand|Right Hand|Right Hand|ArmatureAction|Right Hand|ArmatureAction
+    7400064: Right Hand|Right Hand|Right Hand|CameraAction|Right Hand|CameraAction
+    7400066: Right Hand|Right Hand|Right Hand|CameraAction|Right Hand|CameraAction.001
+    7400068: Right Hand|Right Hand|Right Hand|CubeAction.001|Right Hand|CubeAction.000
+    7400070: Right Hand|Right Hand|Right Hand|CubeAction.001|Right Hand|CubeAction.001
+    7400072: Right Hand|Right Hand|Right Hand|CubeAction.003|Right Hand|CubeAction.000
+    7400074: Right Hand|Right Hand|Right Hand|CubeAction.003|Right Hand|CubeAction.003
+    7400076: Right Hand|Right Hand|Right Hand|CubeAction|Right Hand|CubeAction
+    7400078: Right Hand|Right Hand|Right Hand|CubeAction|Right Hand|CubeAction.001
+    7400080: Left Hand|Cube|Cube|CameraAction|Cube|CameraAction
+    7400082: Left Hand|Cube|Cube|CameraAction|Cube|CameraAction.001
+    7400084: Left Hand|Cube|Cube|CubeAction.001|Cube|CubeAction.000
+    7400086: Left Hand|Cube|Cube|CubeAction.001|Cube|CubeAction.001
+    7400088: Left Hand|Cube|Cube|CubeAction.003|Cube|CubeAction.000
+    7400090: Left Hand|Cube|Cube|CubeAction.003|Cube|CubeAction.003
+    7400092: Left Hand|Cube|Cube|CubeAction|Cube|CubeAction
+    7400094: Left Hand|Cube|Cube|CubeAction|Cube|CubeAction.001
+    7400096: Left Hand|Left Hand.001|Left Hand|ArmatureAction.003|Left Hand|ArmatureAc
+    7400098: Left Hand|Left Hand.001|Left Hand|ArmatureAction|Left Hand|ArmatureAction
+    7400100: Left Hand|Left Hand.001|Left Hand|CameraAction|Left Hand|CameraAction
+    7400102: Left Hand|Left Hand.001|Left Hand|CubeAction.001|Left Hand|CubeAction.001
+    7400104: Left Hand|Left Hand.001|Left Hand|CubeAction.003|Left Hand|CubeAction.003
+    7400106: Left Hand|Left Hand.001|Left Hand|CubeAction|Left Hand|CubeAction
+    7400108: Left Hand|Left Hand|Left Hand|ArmatureAction.003|Left Hand|ArmatureAction
+    7400110: Left Hand|Left Hand|Left Hand|ArmatureAction|Left Hand|ArmatureAction
+    7400112: Left Hand|Left Hand|Left Hand|CameraAction|Left Hand|CameraAction
+    7400114: Left Hand|Left Hand|Left Hand|CubeAction.001|Left Hand|CubeAction.001
+    7400116: Left Hand|Left Hand|Left Hand|CubeAction.003|Left Hand|CubeAction.003
+    7400118: Left Hand|Left Hand|Left Hand|CubeAction|Left Hand|CubeAction
+    7400120: Left Hand|Right Hand|Right Hand|ArmatureAction.003|Right Hand|Armatur.000
+    7400122: Left Hand|Right Hand|Right Hand|ArmatureAction.003|Right Hand|ArmatureAct
+    7400124: Left Hand|Right Hand|Right Hand|ArmatureAction|Right Hand|ArmatureAct.000
+    7400126: Left Hand|Right Hand|Right Hand|ArmatureAction|Right Hand|ArmatureAction
+    7400128: Left Hand|Right Hand|Right Hand|CameraAction|Right Hand|CameraAction
+    7400130: Left Hand|Right Hand|Right Hand|CameraAction|Right Hand|CameraAction.001
+    7400132: Left Hand|Right Hand|Right Hand|CubeAction.001|Right Hand|CubeAction.000
+    7400134: Left Hand|Right Hand|Right Hand|CubeAction.001|Right Hand|CubeAction.001
+    7400136: Left Hand|Right Hand|Right Hand|CubeAction.003|Right Hand|CubeAction.000
+    7400138: Left Hand|Right Hand|Right Hand|CubeAction.003|Right Hand|CubeAction.003
+    7400140: Left Hand|Right Hand|Right Hand|CubeAction|Right Hand|CubeAction
+    7400142: Left Hand|Right Hand|Right Hand|CubeAction|Right Hand|CubeAction.001
+    9500000: //RootNode
+    13700000: Left Hand.002
+    13700002: Left Hand.003
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

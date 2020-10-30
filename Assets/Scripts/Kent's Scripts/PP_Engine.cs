@@ -19,18 +19,21 @@ public class PP_Engine : MonoBehaviour
     public TMPro.TextMeshProUGUI score;
     public Transform cam;
     public cameraController cameraRigging;
-    public viewData view1;
-    public viewData view2;
-    public viewData view3;
-    public viewData view4;
-    public viewData view5;
-    public viewData view6;
-    public viewData view7;
-    public viewData view8;
+    //public viewData view1;
+    //public viewData view2;
+    //public viewData view3;
+    //public viewData view4;
+    //public viewData view5;
+    //public viewData view6;
+    //public viewData view7;
+    //public viewData view8;
+    public viewData[] views = new viewData[5];
     private questionHandler questionEngine;
     string answer;
     int points;
-    private int playTo = 8;
+    private int playTo = 5;
+    private SpeechToText speechToText;
+    public GameObject water;
 
 
 
@@ -42,22 +45,28 @@ public class PP_Engine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        speechToText = GetComponent<SpeechToText>();
+
+        water.SetActive(true);
+        foreach (viewData view in views)
+        {
+            view.toggleAnime(false);
+        }
+
         questionEngine = new questionHandler(new question[]{
-            new question(new string[]{ "Apple", "una manzana"}, view2,
-                new question(new string[]{"cut apple", "una manzana cortada" }, view4, null)),
-            new question(new string[]{"bread", "el pan" }, view1,
-                new question(new string[]{"slice of bread", "un pedazo de pan" }, view5, null)),
-            new question(new string[]{"potato", "una papa" }, view6, null),
-            new question(new string[]{"toaster", "la tostadora"}, view3, null),
-            new question(new string[]{"plate", "el plato"}, view7,
-                new question(new string[]{"plates", "los platos" }, view8, null))}, 12);
+            new question(new string[]{ "I am washing the potato.", "Estoy lavando la papa."}, 0, 
+                new question(new string[]{"I am drying my hands.", "Estoy secando mis manos." }, 1, 
+                    new question(new string[]{"I am cutting the potato.", "Estoy cortando la papa." }, 2, 
+                        new question(new string[]{"I am frying the fries.", "Estoy friendo las papas fritas."}, 3, 
+                            new question(new string[]{"I am eating the fries.", "Estoy comiendo las papas fritas."}, 4, null)))))}, 5);
         
         //Initialize GUI
         //question.text = questionEngine.currentQuestion.getText(0);
         answer = questionEngine.currentQuestion.getText(questionEngine.targetLanguage);
-        cameraRigging.changeView(questionEngine.currentQuestion.getTarget());
+        cameraRigging.changeView(views[getIndex()]);
+        views[getIndex()].toggleAnime(true);
         points = 0;
-
+        water.SetActive(true);
     }
 
     public void changeQA()
@@ -66,10 +75,12 @@ public class PP_Engine : MonoBehaviour
         {
             door.toMenu();
         }
+        views[getIndex()].toggleAnime(false);
         questionEngine.nextQuestion();
         //question.text = questionEngine.currentQuestion.getText(0);
         answer = questionEngine.currentQuestion.getText(questionEngine.targetLanguage);
-        cameraRigging.changeView(questionEngine.currentQuestion.getTarget());
+        cameraRigging.changeView(views[getIndex()]);
+        views[getIndex()].toggleAnime(true);
     }
 
     public void check()
@@ -95,6 +106,36 @@ public class PP_Engine : MonoBehaviour
         {
             score.text = "Wrong";// + "\n" + answer + "\n" + raw.Substring(0,raw.Length - 9) + "\n#\n" + raw2;
         }
+    }
+
+    public void checkByVoice()
+    {
+        score.text = answer;
+
+        speechToText.GetSpeech((text) =>
+        {
+            score.text = text;
+        });
+
+        //speechToText.ListenAndScore(answer, (_score) =>
+        //{
+        //    score.text = _score.ToString();
+        //    if (_score > 0.5f)
+        //    {
+        //        score.text = "Correct: " + _score.ToString();
+        //        changeQA();
+        //    }
+        //    else
+        //    {
+        //        score.text = "Incorrect: " + _score.ToString();
+        //    }
+        //});
+    }
+
+    private int getIndex()
+    {
+        water.SetActive(true);
+        return questionEngine.currentQuestion.getTarget();
     }
 
 }

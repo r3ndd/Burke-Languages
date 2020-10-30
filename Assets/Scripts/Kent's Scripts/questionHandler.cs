@@ -36,13 +36,13 @@ public class question //this is intended to encapsulate a single question/transl
 {
     string[] questionText;//this array contains the translations in different languages and should always be in the following order
     //english, spanish, ... tbd
-    public viewData view;
+    public int viewIndex;
     private question next;
 
-    public question(string[] texts, viewData lookingInfo, question nex)
+    public question(string[] texts, int viewInt, question nex)
     {
         questionText = texts;
-        view = lookingInfo;
+        viewIndex = viewInt;
         next = nex;
     }
 
@@ -51,9 +51,9 @@ public class question //this is intended to encapsulate a single question/transl
         return questionText[languageindex];
     }
 
-    public viewData getTarget()
+    public int getTarget()
     {
-        return view;
+        return viewIndex;
     }
 
     public question getNext()
