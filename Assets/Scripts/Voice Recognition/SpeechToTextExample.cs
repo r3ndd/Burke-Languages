@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Windows.Speech;
 
-public class TextToSpeechExample : MonoBehaviour
+public class SpeechToTextExample : MonoBehaviour
 {
 
     private Text textObj;

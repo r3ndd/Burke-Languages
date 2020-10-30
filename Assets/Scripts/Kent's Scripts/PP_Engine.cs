@@ -32,7 +32,7 @@ public class PP_Engine : MonoBehaviour
     string answer;
     int points;
     private int playTo = 5;
-    private TextToSpeech voiceRec;
+    private SpeechToText speechToText;
     public GameObject water;
 
 
@@ -45,6 +45,8 @@ public class PP_Engine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        speechToText = GetComponent<SpeechToText>();
+
         water.SetActive(true);
         foreach (viewData view in views)
         {
@@ -108,18 +110,26 @@ public class PP_Engine : MonoBehaviour
 
     public void checkByVoice()
     {
-        Debug.Log(answer);
-        voiceRec.ListenAndScore(answer, (num) =>
+        score.text = answer;
+
+        speechToText.GetSpeech((text) =>
         {
-            if (num > .1)
-            {
-                changeQA();
-            }
-            else
-            {
-                score.text = "Soo jyanaidesu.";
-            }
+            score.text = text;
         });
+
+        //speechToText.ListenAndScore(answer, (_score) =>
+        //{
+        //    score.text = _score.ToString();
+        //    if (_score > 0.5f)
+        //    {
+        //        score.text = "Correct: " + _score.ToString();
+        //        changeQA();
+        //    }
+        //    else
+        //    {
+        //        score.text = "Incorrect: " + _score.ToString();
+        //    }
+        //});
     }
 
     private int getIndex()

@@ -21171,6 +21171,7 @@ GameObject:
   - component: {fileID: 879271587}
   - component: {fileID: 879271586}
   - component: {fileID: 879271585}
+  - component: {fileID: 879271590}
   m_Layer: 5
   m_Name: GUI
   m_TagString: Untagged
@@ -21282,6 +21283,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &879271590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879271584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e02b9fbf1030c6747868834a4d87f39c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accuracyLeniency: 3
 --- !u!1 &882011568
 GameObject:
   m_ObjectHideFlags: 0
@@ -35409,6 +35423,10 @@ MonoBehaviour:
   - {fileID: 1286324415}
   - {fileID: 1504049291}
   - {fileID: 2126602111}
+  textToSpeech: {fileID: 0}
+  questionIndex: 0
+  targetAnimation: {fileID: 0}
+  targetCameraPos: {fileID: 0}
 --- !u!4 &1138803936
 Transform:
   m_ObjectHideFlags: 0
