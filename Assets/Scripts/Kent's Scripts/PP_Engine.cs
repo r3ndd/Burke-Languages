@@ -138,4 +138,9 @@ public class PP_Engine : MonoBehaviour
         return questionEngine.currentQuestion.getTarget();
     }
 
+    public void timeIs0()
+    {
+        return;
+    }
+
 }

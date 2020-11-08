@@ -17,6 +17,6 @@ public class goToScene : MonoBehaviour
 
     public void toVocabReview()
     {
-        SceneManager.LoadScene("VocabReview", LoadSceneMode.Single);
+        SceneManager.LoadScene("PP_Kitchen", LoadSceneMode.Single);
     }
 }
