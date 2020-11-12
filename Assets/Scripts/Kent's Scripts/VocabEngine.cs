@@ -6,29 +6,61 @@ public class VocabEngine : MonoBehaviour
 {
 
     //int answer;
-    string[] questions = new string[] { "I'm cooking.", "I'm baking.", "I'm cutting.", "I'm making food.", "I'm getting ready." };
-    string[] answers = new string[] { "Estoy cocinando.", "Estoy horneando.", "Estoy cortando.", "Estoy haciendo comida.", "Me estoy preparando" };
+    string[] questions = new string[] { "I am washing the potato.", "I am drying my hands.", "I am cutting the potato.", "I am frying the fries.", "I am eating the fries." };
+    string[] answers = new string[] { "Estoy lavando la papa.", "Estoy secando mis manos.", "Estoy cortando la papa.", "Estoy friendo las papas fritas.", "Estoy comiendo las papas fritas." };
     System.Random rnd = new System.Random();
     public TMPro.TextMeshProUGUI[] buttons = new TMPro.TextMeshProUGUI[4];
+    public viewData[] views = new viewData[5];
+    public cameraController cameraRigging;
     int buttonIndex;
     int QANum = 0;
-    public TMPro.TextMeshProUGUI question;
+    int possibleNext = -1;
+    //public TMPro.TextMeshProUGUI question;
     public TMPro.TextMeshProUGUI reply;
     //int points;
     public TMPro.TextMeshProUGUI score;
+    public GameObject water;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        foreach (viewData view in views)
+        {
+            view.toggleAnime(false);
+            // debug.log("just now doing this.");
+        }
         setUpQuestion();
+        water.SetActive(true);
+        //for (int i = 0; i < 100; i++)
+        //{
+        //    check0();
+        //    check1();
+        //    check2();
+        //    check3();
+        //}
     }
 
     private void setUpQuestion()
     {
-        QANum = rnd.Next(5);
-        question.text = questions[QANum];
+
+        water.SetActive(true);
+        views[QANum].toggleAnime(false);
+        //Debug.Log(views[QANum].anime.activeSelf);
+        do
+        {
+            possibleNext = rnd.Next(5);
+        } while (possibleNext == QANum);
+        QANum = possibleNext;
+        //question.text = "";
         buttonIndex = rnd.Next(4);
         buttons[buttonIndex].text = answers[QANum];
+        views[QANum].toggleAnime(true);
+        //foreach (viewData view in views)
+        //{
+        //    Debug.Log(view.anime.activeSelf);
+        //}
+        cameraRigging.changeView(views[QANum]);
         int tick = 0;
         int temp1 = -1;
         int temp2 = -1;
@@ -57,6 +89,10 @@ public class VocabEngine : MonoBehaviour
             else buttons[tick].text = answers[temp3];
         }
         //question.text = "Done.";
+        //foreach (viewData view in views)
+        //{
+        //    Debug.Log(view.anime.activeSelf);
+        //}
     }
 
     public void check0()

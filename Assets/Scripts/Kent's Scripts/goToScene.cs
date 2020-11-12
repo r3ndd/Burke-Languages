@@ -10,9 +10,9 @@ public class goToScene : MonoBehaviour
         SceneManager.LoadScene("Menu", LoadSceneMode.Single);
     }
 
-    public void toPP_Game()
+    public void toPP_Kitchen()
     {
-        SceneManager.LoadScene("PP_Game", LoadSceneMode.Single);
+        SceneManager.LoadScene("PP_Kitchen", LoadSceneMode.Single);
     }
 
     public void toVocabReview()

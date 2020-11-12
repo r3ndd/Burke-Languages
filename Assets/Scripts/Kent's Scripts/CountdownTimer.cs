@@ -9,7 +9,7 @@ public class CountdownTimer : MonoBehaviour
 {
     float currentTime = 0f;
     float startingTime = 10f; //value is in seconds
-    static int difficulty = 3;
+    static int difficulty = 1;
 
     public TMPro.TextMeshProUGUI countdownTimer;
     private TimeSpan timePlaying;
@@ -81,26 +81,20 @@ public class CountdownTimer : MonoBehaviour
             timePlaying = TimeSpan.FromSeconds(currentTime);
             countdownTimer.text = timePlaying.ToString("mm':'ss");
 
-  //          if (currentTime > 0 && currentTime <= 10)
-  //          {
-  //              GetComponent<AudioSource>().Play();
- //           }
+            if (currentTime <= 0)
+            {
+                currentTime = 0;
+            }
+            else if (currentTime > 6 && currentTime < 11)
+            {
+                countdownTimer.color = new Color(r, g, b, a);
+            }
+            else if (currentTime <= 6)
+            {
+                g = 0f;
+                countdownTimer.color = new Color(r, g, b, a);
+            }
         }
-
-        if(currentTime <= 0)
-        {
-            currentTime = 0;
-        } 
-        else if (currentTime > 6 && currentTime < 11)
-        {
-            countdownTimer.color = new Color(r, g, b, a);
-        }
-        else if (currentTime <= 6 )
-        {
-            g = 0f;
-            countdownTimer.color = new Color(r, g, b, a);
-        }
-
 
     }
 }
