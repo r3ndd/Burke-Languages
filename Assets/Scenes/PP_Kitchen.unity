@@ -21196,6 +21196,7 @@ MonoBehaviour:
   question: {fileID: 1713870245}
   reply: {fileID: 660755512}
   score: {fileID: 672661755}
+  countdownTimer: {fileID: 1743209588}
   cam: {fileID: 1471983382}
   cameraRigging: {fileID: 1471983383}
   views:
@@ -21311,6 +21312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownTimer: {fileID: 1743209588}
+  pP_Engine: {fileID: 0}
 --- !u!1 &882011568
 GameObject:
   m_ObjectHideFlags: 0
@@ -55933,7 +55935,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 00:00
+  m_text: 00:01
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

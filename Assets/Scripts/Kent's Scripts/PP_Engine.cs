@@ -17,6 +17,7 @@ public class PP_Engine : MonoBehaviour
     public TMPro.TextMeshProUGUI question;
     public TMPro.TextMeshProUGUI reply;
     public TMPro.TextMeshProUGUI score;
+    public TMPro.TextMeshProUGUI countdownTimer;
     public Transform cam;
     public cameraController cameraRigging;
     //public viewData view1;
@@ -35,8 +36,9 @@ public class PP_Engine : MonoBehaviour
     private SpeechToText speechToText;
     public GameObject water;
 
+    public CountdownTimer _countdownTimer;
 
-
+    bool changeQ = true; //counter so question only changes once.
     
     //public questionHandler questionEngine;
 
@@ -137,5 +139,21 @@ public class PP_Engine : MonoBehaviour
         water.SetActive(true);
         return questionEngine.currentQuestion.getTarget();
     }
+    
+    void Update()
+    {
+        if(countdownTimer.text == "00:00" && changeQ == true)
+        {
 
+            changeQA();
+            changeQ = false;
+
+        } else if (countdownTimer.text != "00:00")
+        {
+            changeQ = true;
+        }
+
+
+
+    }
 }

@@ -7,14 +7,18 @@ using UnityEngine.UI;
 
 public class CountdownTimer : MonoBehaviour
 {
-    float currentTime = 0f;
+    public float currentTime = 0f;
     float startingTime = 10f; //value is in seconds
     static int difficulty = 1;
 
     public TMPro.TextMeshProUGUI countdownTimer;
     private TimeSpan timePlaying;
 
+    public PP_Engine pP_Engine;
+
     float r = 1f, g = 1f, b = 0, a = 0.6f;
+
+    float startTime = 1f;
 
  //   public static AudioClip tickSound;
   //  static AudioSource audioSrc;
@@ -40,8 +44,10 @@ public class CountdownTimer : MonoBehaviour
                 currentTime = 0f;
                 break;
         }
-  //      text = countdownTimer.getComponent<Text>();
-  //      text.color = new Color(r, g, b, a);
+        //      text = countdownTimer.getComponent<Text>();
+        //      text.color = new Color(r, g, b, a);
+
+        startTime = currentTime;
     }
 
     public void ChangeDiffOne()
@@ -83,15 +89,30 @@ public class CountdownTimer : MonoBehaviour
 
             if (currentTime <= 0)
             {
-                currentTime = 0;
+                currentTime = startTime;
             }
             else if (currentTime > 6 && currentTime < 11)
             {
+                g = 1f;
+                r = 1f;
+                b = 0f;
+                a = 1f;
                 countdownTimer.color = new Color(r, g, b, a);
             }
             else if (currentTime <= 6)
             {
                 g = 0f;
+                r = 1f;
+                b = 0f;
+                a = 1f;
+                countdownTimer.color = new Color(r, g, b, a);
+            }
+            else if (currentTime >= 11)
+            {
+                g = 1f;
+                r = 1f;
+                b = 1f;
+                a = 1f;
                 countdownTimer.color = new Color(r, g, b, a);
             }
         }
