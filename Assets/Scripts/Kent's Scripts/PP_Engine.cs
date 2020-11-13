@@ -19,6 +19,7 @@ public class PP_Engine : MonoBehaviour
     public TMPro.TextMeshProUGUI score;
     public Transform cam;
     public cameraController cameraRigging;
+    public CountdownTimer timer;
     //public viewData view1;
     //public viewData view2;
     //public viewData view3;
@@ -27,7 +28,10 @@ public class PP_Engine : MonoBehaviour
     //public viewData view6;
     //public viewData view7;
     //public viewData view8;
+    public AudioSource rightSFX;
+    public AudioSource wrongSFX;
     public viewData[] views = new viewData[5];
+    public AudioSource[] voiceClips = new AudioSource[6];
     private questionHandler questionEngine;
     string answer;
     int points;
@@ -45,7 +49,10 @@ public class PP_Engine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        voiceClips[5].Play();
         speechToText = GetComponent<SpeechToText>();
+
+        
 
         water.SetActive(true);
         foreach (viewData view in views)
@@ -55,10 +62,10 @@ public class PP_Engine : MonoBehaviour
 
         questionEngine = new questionHandler(new question[]{
             new question(new string[]{ "I am washing the potato.", "Estoy lavando la papa."}, 0, 
-                new question(new string[]{"I am drying my hands.", "Estoy secando mis manos." }, 1, 
+                new question(new string[]{"I am drying my hands.", "Me estoy secando las manos." }, 1, 
                     new question(new string[]{"I am cutting the potato.", "Estoy cortando la papa." }, 2, 
-                        new question(new string[]{"I am frying the fries.", "Estoy friendo las papas fritas."}, 3, 
-                            new question(new string[]{"I am eating the fries.", "Estoy comiendo las papas fritas."}, 4, null)))))}, 5);
+                        new question(new string[]{"I am cooking the potato.", "Estoy cocinando la papa."}, 3, 
+                            new question(new string[]{"I am eating the fries.", "Estoy comiendo las papas."}, 4, null)))))}, 5);
         
         //Initialize GUI
         //question.text = questionEngine.currentQuestion.getText(0);
@@ -80,6 +87,7 @@ public class PP_Engine : MonoBehaviour
         //question.text = questionEngine.currentQuestion.getText(0);
         answer = questionEngine.currentQuestion.getText(questionEngine.targetLanguage);
         cameraRigging.changeView(views[getIndex()]);
+        voiceClips[5].Play();
         views[getIndex()].toggleAnime(true);
     }
 
@@ -97,39 +105,38 @@ public class PP_Engine : MonoBehaviour
         }
         if (raw2.Equals(raw.Substring(0,raw.Length - 9)))
         {
+            rightSFX.Play();
+            StartCoroutine(timer.resetTimer());
+            timer.changeQueued = true;
             points++;
             score.text = "Score: " + points.ToString();
-            changeQA();
-            
+            voiceClips[getIndex()].Play(1);
+            StartCoroutine(sitTight());           
         }
         else
         {
+            wrongSFX.Play();
             score.text = "Wrong";// + "\n" + answer + "\n" + raw.Substring(0,raw.Length - 9) + "\n#\n" + raw2;
         }
     }
 
     public void checkByVoice()
     {
-        score.text = answer;
-
-        speechToText.GetSpeech((text) =>
+        speechToText.ListenAndScore(answer, (_score) =>
         {
-            score.text = text;
+            score.text = _score.ToString();
+            if (_score > 0.5f)
+            {
+                score.text = "Correct: " + _score.ToString();
+                rightSFX.Play();
+                changeQA();
+            }
+            else
+            {
+                wrongSFX.Play();
+                score.text = "Incorrect: " + _score.ToString();
+            }
         });
-
-        //speechToText.ListenAndScore(answer, (_score) =>
-        //{
-        //    score.text = _score.ToString();
-        //    if (_score > 0.5f)
-        //    {
-        //        score.text = "Correct: " + _score.ToString();
-        //        changeQA();
-        //    }
-        //    else
-        //    {
-        //        score.text = "Incorrect: " + _score.ToString();
-        //    }
-        //});
     }
 
     private int getIndex()
@@ -138,9 +145,19 @@ public class PP_Engine : MonoBehaviour
         return questionEngine.currentQuestion.getTarget();
     }
 
-    public void timeIs0()
+    public IEnumerator timeIs0()
     {
-        return;
+        wrongSFX.Play();
+        yield return new WaitForSeconds(1);
+        voiceClips[getIndex()].Play();
+        yield return new WaitForSeconds(3);
+        changeQA();
     }
 
+
+    IEnumerator sitTight()
+    {
+        yield return new WaitForSeconds(3);
+        changeQA();
+    }
 }
