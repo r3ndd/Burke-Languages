@@ -28,11 +28,11 @@ public class PP_Engine : MonoBehaviour
     //public viewData view6;
     //public viewData view7;
     //public viewData view8;
-    public viewData[] views = new viewData[5];
+    public viewData[] views = new viewData[7];
     private questionHandler questionEngine;
     string answer;
     int points;
-    private int playTo = 5;
+    private int playTo = 7;
     private SpeechToText speechToText;
     public GameObject water;
 
@@ -56,11 +56,13 @@ public class PP_Engine : MonoBehaviour
         }
 
         questionEngine = new questionHandler(new question[]{
-            new question(new string[]{ "I am washing the potato.", "Estoy lavando la papa."}, 0, 
-                new question(new string[]{"I am drying my hands.", "Estoy secando mis manos." }, 1, 
-                    new question(new string[]{"I am cutting the potato.", "Estoy cortando la papa." }, 2, 
-                        new question(new string[]{"I am frying the fries.", "Estoy friendo las papas fritas."}, 3, 
-                            new question(new string[]{"I am eating the fries.", "Estoy comiendo las papas fritas."}, 4, null)))))}, 5);
+            new question(new string[]{ "I am washing my hands.", "Estoy lavando mis manos."}, 0,
+                new question(new string[]{ "I am washing the potato.", "Estoy lavando la papa."}, 1, 
+                    new question(new string[]{"I am drying my hands.", "Estoy secando mis manos." }, 2, 
+                        new question(new string[]{"I am cutting the potato.", "Estoy cortando la papa." }, 3, 
+                            new question(new string[]{"I am frying the fries.", "Estoy friendo las papas fritas."}, 4, 
+                                new question(new string[]{ "I am serving the fries.", "Estoy sirviendo las papas fritas."}, 5,
+                                   new question(new string[]{"I am eating the fries.", "Estoy comiendo las papas fritas."}, 6, null)))))))}, 7);
         
         //Initialize GUI
         //question.text = questionEngine.currentQuestion.getText(0);
@@ -92,17 +94,20 @@ public class PP_Engine : MonoBehaviour
         string raw = BitConverter.ToString(bites);
         byte[] bites2 = Encoding.Default.GetBytes(answer.ToLower());
         string raw2 = BitConverter.ToString(bites2);
+
         if(raw.Length == 8)
         {
             score.text = "No Answer.";
             return;
         }
+
         if (raw2.Equals(raw.Substring(0,raw.Length - 9)))
         {
             points++;
             score.text = "Score: " + points.ToString();
             changeQA();
-            
+            _countdownTimer.setTime();
+
         }
         else
         {
@@ -142,18 +147,15 @@ public class PP_Engine : MonoBehaviour
     
     void Update()
     {
-        if(countdownTimer.text == "00:00" && changeQ == true)
+        if(countdownTimer.text == "00:00" && changeQ == true && _countdownTimer.getDifficulty() != 1)
         {
-
             changeQA();
             changeQ = false;
+        }
 
-        } else if (countdownTimer.text != "00:00")
+        else if (countdownTimer.text != "00:00")
         {
             changeQ = true;
         }
-
-
-
     }
 }

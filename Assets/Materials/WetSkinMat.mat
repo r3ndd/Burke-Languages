@@ -8,12 +8,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WetSkinMat
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: cb9200997a7884f419dd531c4c1fa0a5, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2000
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -35,6 +35,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DisplGuide:
+        m_Texture: {fileID: 2800000, guid: 2ff1c71a1ce4d4048a1075e204ac8e4f, type: 3}
+        m_Scale: {x: 10, y: 10}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -47,6 +51,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: bd1721a4a1b0bd747a9ef7603ab2a12e, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -56,9 +64,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _BottomFoamThreshold: 0
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DisplAmount: 0
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.769
@@ -74,4 +84,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.9529412, g: 0.69803923, b: 0.49411765, a: 1}
+    - _ColorBottomDark: {r: 1, g: 1, b: 1, a: 0}
+    - _ColorBottomLight: {r: 0.7921569, g: 0.5529412, b: 0.29411766, a: 0.5882353}
+    - _ColorTopDark: {r: 1, g: 1, b: 1, a: 0}
+    - _ColorTopLight: {r: 0.7924528, g: 0.5524484, b: 0.2953008, a: 0.5882353}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

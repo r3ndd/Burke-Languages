@@ -8,8 +8,10 @@ using UnityEngine.UI;
 public class CountdownTimer : MonoBehaviour
 {
     public float currentTime = 0f;
+    float duration = 0f;
     float startingTime = 10f; //value is in seconds
     static int difficulty = 1;
+    bool increasing = true; //bool for font size when time is running out
 
     public TMPro.TextMeshProUGUI countdownTimer;
     private TimeSpan timePlaying;
@@ -48,6 +50,32 @@ public class CountdownTimer : MonoBehaviour
         //      text.color = new Color(r, g, b, a);
 
         startTime = currentTime;
+        duration = currentTime;
+    }
+
+    //Difficulty getter
+    public int getDifficulty()
+    {
+        return difficulty;
+    }
+
+    //Set time back
+    public void setTime()
+    {
+        if (difficulty == 2)
+        {
+            currentTime = 31f;
+        }
+
+        else if (difficulty == 3)
+        {
+            currentTime = 11f;
+        }
+
+        else if (difficulty == 4)
+        {
+            currentTime = 6f;
+        }
     }
 
     public void ChangeDiffOne()
@@ -70,8 +98,6 @@ public class CountdownTimer : MonoBehaviour
         difficulty = 4;
     }
 
-
-
     // Update is called once per frame
     void Update()
     {
@@ -87,10 +113,57 @@ public class CountdownTimer : MonoBehaviour
             timePlaying = TimeSpan.FromSeconds(currentTime);
             countdownTimer.text = timePlaying.ToString("mm':'ss");
 
+            if (currentTime > duration / 2)
+            {
+                g = 1f;
+                r = 1f;
+                b = ((currentTime - (duration / 2)) / (duration / 2));
+                a = 1f;
+                countdownTimer.color = new Color(r, g, b, a);
+            }
+
+            else
+            {
+                g = currentTime / (duration / 2);
+                r = 1f;
+                b = 0f;
+                a = 1f;
+                countdownTimer.color = new Color(r, g, b, a);
+            }
+            
+            if (countdownTimer.color.g <= 0.5f)
+            {
+                if (countdownTimer.fontSize < 40f && increasing == true)
+                {
+                    countdownTimer.fontSize++;
+                    if (countdownTimer.fontSize >= 40f)
+                    {
+                        increasing = false;
+                    }
+                }
+
+                else if (countdownTimer.fontSize > 20f && increasing == false)
+                {
+                    countdownTimer.fontSize--;
+                    if (countdownTimer.fontSize <= 20f)
+                    {
+                        increasing = true;
+                    }
+                }
+            }
+
+            //Reset font size
+            if (countdownTimer.color.g >= 0.75f && countdownTimer.fontSize > 20)
+            {
+                countdownTimer.fontSize--;
+            }
+
+            
             if (currentTime <= 0)
             {
                 currentTime = startTime;
             }
+            /*
             else if (currentTime > 6 && currentTime < 11)
             {
                 g = 1f;
@@ -115,6 +188,7 @@ public class CountdownTimer : MonoBehaviour
                 a = 1f;
                 countdownTimer.color = new Color(r, g, b, a);
             }
+            */
         }
 
     }
