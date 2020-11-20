@@ -12,6 +12,7 @@ public class CountdownTimer : MonoBehaviour
     float startingTime = 10f; //value is in seconds
     static int difficulty = 1;
     bool increasing = true; //bool for font size when time is running out
+    public PP_Engine time0Handler;
 
     public TMPro.TextMeshProUGUI countdownTimer;
     private TimeSpan timePlaying;
@@ -21,9 +22,14 @@ public class CountdownTimer : MonoBehaviour
     float r = 1f, g = 1f, b = 0, a = 0.6f;
 
     float startTime = 1f;
+    public AudioSource tickSound;
+    bool tick = true;
+    public bool changeQueued = false;
+    string initialTime = "00:10";
+    string nextTime = "00:10";
 
- //   public static AudioClip tickSound;
-  //  static AudioSource audioSrc;
+    //   public static AudioClip tickSound;
+    //  static AudioSource audioSrc;
 
     // Start is called before the first frame update
     void Start()
@@ -111,7 +117,53 @@ public class CountdownTimer : MonoBehaviour
         {
             currentTime -= 1 * Time.deltaTime;
             timePlaying = TimeSpan.FromSeconds(currentTime);
-            countdownTimer.text = timePlaying.ToString("mm':'ss");
+            if (!changeQueued)
+            {
+                countdownTimer.text = timePlaying.ToString("mm':'ss");
+            }
+            else
+            {
+                currentTime = 0;
+                countdownTimer.text = timePlaying.ToString("mm':'ss");
+            }
+            if (currentTime <= 0 && !changeQueued)
+            {
+                StartCoroutine(time0Handler.timeIs0());
+                StartCoroutine(resetTimer());
+                changeQueued = true;
+            }
+            else if (currentTime > 6 && currentTime < 11)
+            {
+                nextTime = countdownTimer.text;
+                if (nextTime != initialTime)
+                {
+                    tick = true;
+                    initialTime = nextTime;
+                }
+
+                while (tick)
+                {
+                    tickSound.Play();
+                    tick = false;
+                }
+
+            }
+            else if (currentTime <= 6)
+            {
+                nextTime = countdownTimer.text;
+                if (nextTime != initialTime)
+                {
+                    tick = true;
+                    initialTime = nextTime;
+                }
+
+                while (tick)
+                {
+                    tickSound.Play();
+                    tick = false;
+                }
+     
+            }
 
             if (currentTime > duration / 2)
             {
@@ -130,7 +182,7 @@ public class CountdownTimer : MonoBehaviour
                 a = 1f;
                 countdownTimer.color = new Color(r, g, b, a);
             }
-            
+
             if (countdownTimer.color.g <= 0.5f)
             {
                 if (countdownTimer.fontSize < 40f && increasing == true)
@@ -158,38 +210,18 @@ public class CountdownTimer : MonoBehaviour
                 countdownTimer.fontSize--;
             }
 
-            
+
             if (currentTime <= 0)
             {
                 currentTime = startTime;
             }
-            /*
-            else if (currentTime > 6 && currentTime < 11)
-            {
-                g = 1f;
-                r = 1f;
-                b = 0f;
-                a = 1f;
-                countdownTimer.color = new Color(r, g, b, a);
-            }
-            else if (currentTime <= 6)
-            {
-                g = 0f;
-                r = 1f;
-                b = 0f;
-                a = 1f;
-                countdownTimer.color = new Color(r, g, b, a);
-            }
-            else if (currentTime >= 11)
-            {
-                g = 1f;
-                r = 1f;
-                b = 1f;
-                a = 1f;
-                countdownTimer.color = new Color(r, g, b, a);
-            }
-            */
         }
+    }
 
+    public IEnumerator resetTimer()
+    {
+        yield return new WaitForSeconds(6);
+        currentTime = startTime;
+        changeQueued = false;
     }
 }

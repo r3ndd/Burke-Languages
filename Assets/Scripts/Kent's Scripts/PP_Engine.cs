@@ -9,17 +9,15 @@ using UnityEngine.UI;
 //instead try making a component to attach to a game object that will provide the needed data and form a node in a linked list in a series
 //create an end for the series
 
-
-
 public class PP_Engine : MonoBehaviour
 {
     private goToScene door = new goToScene();
     public TMPro.TextMeshProUGUI question;
     public TMPro.TextMeshProUGUI reply;
     public TMPro.TextMeshProUGUI score;
-    public TMPro.TextMeshProUGUI countdownTimer;
     public Transform cam;
     public cameraController cameraRigging;
+    public CountdownTimer timer;
     //public viewData view1;
     //public viewData view2;
     //public viewData view3;
@@ -28,7 +26,10 @@ public class PP_Engine : MonoBehaviour
     //public viewData view6;
     //public viewData view7;
     //public viewData view8;
+    public AudioSource rightSFX;
+    public AudioSource wrongSFX;
     public viewData[] views = new viewData[7];
+    public AudioSource[] voiceClips = new AudioSource[6];
     private questionHandler questionEngine;
     string answer;
     int points;
@@ -36,10 +37,9 @@ public class PP_Engine : MonoBehaviour
     private SpeechToText speechToText;
     public GameObject water;
 
-    public CountdownTimer _countdownTimer;
 
-    bool changeQ = true; //counter so question only changes once.
-    
+
+
     //public questionHandler questionEngine;
 
     //public Transform[] targets;
@@ -47,7 +47,10 @@ public class PP_Engine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        voiceClips[7].Play();
         speechToText = GetComponent<SpeechToText>();
+
+
 
         water.SetActive(true);
         foreach (viewData view in views)
@@ -56,14 +59,14 @@ public class PP_Engine : MonoBehaviour
         }
 
         questionEngine = new questionHandler(new question[]{
-            new question(new string[]{ "I am washing my hands.", "Estoy lavando mis manos."}, 0,
-                new question(new string[]{ "I am washing the potato.", "Estoy lavando la papa."}, 1, 
-                    new question(new string[]{"I am drying my hands.", "Estoy secando mis manos." }, 2, 
-                        new question(new string[]{"I am cutting the potato.", "Estoy cortando la papa." }, 3, 
-                            new question(new string[]{"I am frying the fries.", "Estoy friendo las papas fritas."}, 4, 
-                                new question(new string[]{ "I am serving the fries.", "Estoy sirviendo las papas fritas."}, 5,
-                                   new question(new string[]{"I am eating the fries.", "Estoy comiendo las papas fritas."}, 6, null)))))))}, 7);
-        
+            new question(new string[]{ "I am washing my hands.", "Estoy lavando las manos."}, 0,
+                new question(new string[]{ "I am washing the potato.", "Estoy lavando la papa."}, 1,
+                    new question(new string[]{"I am drying my hands.", "Me estoy secando las manos." }, 2,
+                        new question(new string[]{"I am cutting the potato.", "Estoy cortando la papa." }, 3,
+                            new question(new string[]{"I am cooking the potato.", "Estoy cocinando la papa."}, 4,
+                                new question(new string[]{ "I am serving the fries.", "Estoy sirviendo las papas."}, 5,
+                                    new question(new string[]{"I am eating the fries.", "Estoy comiendo las papas."}, 6, null)))))))}, 7);
+
         //Initialize GUI
         //question.text = questionEngine.currentQuestion.getText(0);
         answer = questionEngine.currentQuestion.getText(questionEngine.targetLanguage);
@@ -75,7 +78,7 @@ public class PP_Engine : MonoBehaviour
 
     public void changeQA()
     {
-        if(points == playTo)
+        if (points == playTo)
         {
             door.toMenu();
         }
@@ -84,6 +87,7 @@ public class PP_Engine : MonoBehaviour
         //question.text = questionEngine.currentQuestion.getText(0);
         answer = questionEngine.currentQuestion.getText(questionEngine.targetLanguage);
         cameraRigging.changeView(views[getIndex()]);
+        voiceClips[7].Play();
         views[getIndex()].toggleAnime(true);
     }
 
@@ -94,49 +98,45 @@ public class PP_Engine : MonoBehaviour
         string raw = BitConverter.ToString(bites);
         byte[] bites2 = Encoding.Default.GetBytes(answer.ToLower());
         string raw2 = BitConverter.ToString(bites2);
-
-        if(raw.Length == 8)
+        if (raw.Length == 8)
         {
             score.text = "No Answer.";
             return;
         }
-
-        if (raw2.Equals(raw.Substring(0,raw.Length - 9)))
+        if (raw2.Equals(raw.Substring(0, raw.Length - 9)))
         {
+            rightSFX.Play();
+            StartCoroutine(timer.resetTimer());
+            timer.changeQueued = true;
             points++;
             score.text = "Score: " + points.ToString();
-            changeQA();
-            _countdownTimer.setTime();
-
+            voiceClips[getIndex()].Play(1);
+            StartCoroutine(sitTight());
         }
         else
         {
+            wrongSFX.Play();
             score.text = "Wrong";// + "\n" + answer + "\n" + raw.Substring(0,raw.Length - 9) + "\n#\n" + raw2;
         }
     }
 
     public void checkByVoice()
     {
-        score.text = answer;
-
-        speechToText.GetSpeech((text) =>
+        speechToText.ListenAndScore(answer, (_score) =>
         {
-            score.text = text;
+            score.text = _score.ToString();
+            if (_score > 0.5f)
+            {
+                score.text = "Correct: " + _score.ToString();
+                rightSFX.Play();
+                changeQA();
+            }
+            else
+            {
+                wrongSFX.Play();
+                score.text = "Incorrect: " + _score.ToString();
+            }
         });
-
-        //speechToText.ListenAndScore(answer, (_score) =>
-        //{
-        //    score.text = _score.ToString();
-        //    if (_score > 0.5f)
-        //    {
-        //        score.text = "Correct: " + _score.ToString();
-        //        changeQA();
-        //    }
-        //    else
-        //    {
-        //        score.text = "Incorrect: " + _score.ToString();
-        //    }
-        //});
     }
 
     private int getIndex()
@@ -144,18 +144,19 @@ public class PP_Engine : MonoBehaviour
         water.SetActive(true);
         return questionEngine.currentQuestion.getTarget();
     }
-    
-    void Update()
-    {
-        if(countdownTimer.text == "00:00" && changeQ == true && _countdownTimer.getDifficulty() != 1)
-        {
-            changeQA();
-            changeQ = false;
-        }
 
-        else if (countdownTimer.text != "00:00")
-        {
-            changeQ = true;
-        }
+    public IEnumerator timeIs0()
+    {
+        wrongSFX.Play();
+        yield return new WaitForSeconds(1);
+        voiceClips[getIndex()].Play();
+        yield return new WaitForSeconds(3);
+        changeQA();
+    }
+
+    IEnumerator sitTight()
+    {
+        yield return new WaitForSeconds(3);
+        changeQA();
     }
 }
