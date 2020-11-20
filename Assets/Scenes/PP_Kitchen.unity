@@ -9988,6 +9988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime: 0
+  difficulty: 3
   time0Handler: {fileID: 879271585}
   countdownTimer: {fileID: 1743209588}
   pP_Engine: {fileID: 879271585}

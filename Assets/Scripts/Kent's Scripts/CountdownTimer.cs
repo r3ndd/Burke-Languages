@@ -10,7 +10,7 @@ public class CountdownTimer : MonoBehaviour
     public float currentTime = 0f;
     float duration = 0f;
     float startingTime = 10f; //value is in seconds
-    static int difficulty = 1;
+    public int difficulty = 3;
     bool increasing = true; //bool for font size when time is running out
     public PP_Engine time0Handler;
 
