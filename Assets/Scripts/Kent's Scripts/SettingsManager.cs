@@ -16,9 +16,10 @@ public class SettingsManager : MonoBehaviour
 
     private void Start()
     {
+        
         mixer.SetFloat("volume", PlayerPrefs.GetFloat("volume"));
         langDrop.value = PlayerPrefs.GetInt("tLanguage");
-        gramDrop.value = PlayerPrefs.GetInt("grammar");
+        gramDrop.value = PlayerPrefs.GetInt("responseType");
         volumeSlider.value = PlayerPrefs.GetFloat("volume");
         signedIn = PlayerPrefs.GetInt("Authentication");
         Debug.Log("Started");
@@ -38,7 +39,7 @@ public class SettingsManager : MonoBehaviour
 
     public void saveGrammar(int grammar)
     {
-        PlayerPrefs.SetInt("grammar", grammar);
+        PlayerPrefs.SetInt("responseType", grammar);
     }
 
     public void saveVolume(float vol)
@@ -65,5 +66,32 @@ public class SettingsManager : MonoBehaviour
         Debug.Log("Signed off");
         signedIn = 0;
         saveAuthentication();
+    }
+
+    public void setGame0()
+    {
+        PlayerPrefs.SetInt("gameType", 0);
+    }
+
+    public void setGame1()
+    {
+        PlayerPrefs.SetInt("gameType", 1);
+    }
+
+    public void setDif1()
+    {
+        PlayerPrefs.SetInt("difficulty", 1);
+    }
+    public void setDif2()
+    {
+        PlayerPrefs.SetInt("difficulty", 2);
+    }
+    public void setDif3()
+    {
+        PlayerPrefs.SetInt("difficulty", 3);
+    }
+    public void setDif4()
+    {
+        PlayerPrefs.SetInt("difficulty", 4);
     }
 }

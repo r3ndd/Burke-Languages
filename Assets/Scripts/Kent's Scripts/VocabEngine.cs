@@ -6,39 +6,38 @@ public class VocabEngine : MonoBehaviour
 {
 
     //int answer;
-    string[] questions = new string[] { "I am washing the potato.", "I am drying my hands.", "I am cutting the potato.", "I am frying the fries.", "I am eating the fries." };
-    string[] answers = new string[] { "Estoy lavando la papa.", "Estoy secando mis manos.", "Estoy cortando la papa.", "Estoy friendo las papas fritas.", "Estoy comiendo las papas fritas." };
+    string[] questions = new string[] { "I am washing my hands.", "I am washing the potato.", "I am drying my hands.", "I am cutting the potato.", "I am frying the fries.", "I am serving the fries.", "I am eating the fries." };
+    string[] answers = new string[] { "Me estoy lavando las manos.", "Estoy lavando la papa.", "Me estoy secando las manos.", "Estoy cortando la papa.", "Estoy cocinando las papas fritas.", "Estoy sirviendo las papas.", "Estoy comiendo las papas." };
     System.Random rnd = new System.Random();
     public TMPro.TextMeshProUGUI[] buttons = new TMPro.TextMeshProUGUI[4];
-    public viewData[] views = new viewData[5];
+    public viewData[] views = new viewData[7];
+    public AudioSource[] voiceClips = new AudioSource[8];
     public cameraController cameraRigging;
     int buttonIndex;
     int QANum = 0;
     int possibleNext = -1;
     //public TMPro.TextMeshProUGUI question;
-    public TMPro.TextMeshProUGUI reply;
-    //int points;
-    public TMPro.TextMeshProUGUI score;
+    //public TMPro.TextMeshProUGUI reply;
+    private int correct = 0;
+    private int incorrect = 0;
+    public TMPro.TextMeshProUGUI right;
+    public TMPro.TextMeshProUGUI wrong;
     public GameObject water;
+    public AudioSource rightSFX;
+    public AudioSource wrongSFX;
+    bool clipQueued = false;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        foreach (viewData view in views)
+        foreach(viewData view in views)
         {
             view.toggleAnime(false);
-            // debug.log("just now doing this.");
         }
+        voiceClips[7].Play();
         setUpQuestion();
         water.SetActive(true);
-        //for (int i = 0; i < 100; i++)
-        //{
-        //    check0();
-        //    check1();
-        //    check2();
-        //    check3();
-        //}
     }
 
     private void setUpQuestion()
@@ -46,20 +45,15 @@ public class VocabEngine : MonoBehaviour
 
         water.SetActive(true);
         views[QANum].toggleAnime(false);
-        //Debug.Log(views[QANum].anime.activeSelf);
         do
         {
-            possibleNext = rnd.Next(5);
+            possibleNext = rnd.Next(7);
         } while (possibleNext == QANum);
         QANum = possibleNext;
-        //question.text = "";
         buttonIndex = rnd.Next(4);
         buttons[buttonIndex].text = answers[QANum];
-        views[QANum].toggleAnime(true);
-        //foreach (viewData view in views)
-        //{
-        //    Debug.Log(view.anime.activeSelf);
-        //}
+
+        StartCoroutine(activateAnime());
         cameraRigging.changeView(views[QANum]);
         int tick = 0;
         int temp1 = -1;
@@ -88,60 +82,101 @@ public class VocabEngine : MonoBehaviour
             if (temp3 == QANum || temp3 == temp1 || temp3 == temp2) temp3 = -1;
             else buttons[tick].text = answers[temp3];
         }
-        //question.text = "Done.";
-        //foreach (viewData view in views)
-        //{
-        //    Debug.Log(view.anime.activeSelf);
-        //}
+
     }
 
     public void check0()
     {
         if(buttonIndex == 0)
         {
-            score.text = "Correct";
+            correct++;
+            right.text = correct.ToString();
+            rightSFX.Play();
+            voiceClips[QANum].Play();
+            clipQueued = true;
+            StartCoroutine(queryUser());
             setUpQuestion();
         }
         else
         {
-            score.text = "Try Again";
+            incorrect++;
+            wrong.text = incorrect.ToString();
+            wrongSFX.Play();
+            wrong.text = incorrect.ToString();
         }
     }
     public void check1()
     {
         if (buttonIndex == 1)
         {
-            score.text = "Correct";
+            correct++;
+            right.text = correct.ToString();
+            rightSFX.Play();
+            voiceClips[QANum].Play();
+            clipQueued = true;
+            StartCoroutine(queryUser());
             setUpQuestion();
         }
         else
         {
-            score.text = "Try Again";
+            incorrect++;
+            wrong.text = incorrect.ToString();
+            wrongSFX.Play();
+            wrong.text = incorrect.ToString();
         }
     }
     public void check2()
     {
         if (buttonIndex == 2)
         {
-            score.text = "Correct";
+            correct++;
+            right.text = correct.ToString();
+            rightSFX.Play();
+            voiceClips[QANum].Play();
+            clipQueued = true;
+            StartCoroutine(queryUser());
             setUpQuestion();
         }
         else
         {
-            score.text = "Try Again";
+            incorrect++;
+            wrong.text = incorrect.ToString();
+            wrongSFX.Play();
+            wrong.text = incorrect.ToString();
         }
     }
     public void check3()
     {
         if (buttonIndex == 3)
         {
-            score.text = "Correct";
+            correct++;
+            right.text = correct.ToString();
+            rightSFX.Play();
+            voiceClips[QANum].Play();
+            clipQueued = true;
+            StartCoroutine(queryUser());
             setUpQuestion();
         }
         else
         {
-            score.text = "Try Again";
+            incorrect++;
+            wrong.text = incorrect.ToString();
+            wrongSFX.Play();
+            wrong.text = incorrect.ToString();
         }
+    }
+
+    IEnumerator queryUser()
+    {
+        yield return new WaitForSeconds(2);
+        voiceClips[7].Play();
+        clipQueued = false;
+    }
+
+    IEnumerator activateAnime()
+    {
+        yield return new WaitForSeconds(.7f);
+        views[QANum].toggleAnime(true);
     }
     
 }

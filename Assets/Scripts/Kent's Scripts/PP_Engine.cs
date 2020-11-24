@@ -18,14 +18,7 @@ public class PP_Engine : MonoBehaviour
     public Transform cam;
     public cameraController cameraRigging;
     public CountdownTimer timer;
-    //public viewData view1;
-    //public viewData view2;
-    //public viewData view3;
-    //public viewData view4;
-    //public viewData view5;
-    //public viewData view6;
-    //public viewData view7;
-    //public viewData view8;
+    private int responseType;
     public AudioSource rightSFX;
     public AudioSource wrongSFX;
     public viewData[] views = new viewData[7];
@@ -36,7 +29,9 @@ public class PP_Engine : MonoBehaviour
     private int playTo = 7;
     private SpeechToText speechToText;
     public GameObject water;
-
+    public GameObject voiceButton;
+    public GameObject typeButton;
+    public GameObject typeField;
 
 
 
@@ -47,6 +42,16 @@ public class PP_Engine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        responseType = PlayerPrefs.GetInt("responseType");
+        if (responseType == 0)
+        {
+            voiceButton.SetActive(false);
+        }
+        else if(responseType == 1)
+        {
+            typeButton.SetActive(false);
+            typeField.SetActive(false);
+        }
         voiceClips[7].Play();
         speechToText = GetComponent<SpeechToText>();
 
@@ -59,7 +64,7 @@ public class PP_Engine : MonoBehaviour
         }
 
         questionEngine = new questionHandler(new question[]{
-            new question(new string[]{ "I am washing my hands.", "Estoy lavando las manos."}, 0,
+            new question(new string[]{ "I am washing my hands.", "Me estoy lavando las manos."}, 0,
                 new question(new string[]{ "I am washing the potato.", "Estoy lavando la papa."}, 1,
                     new question(new string[]{"I am drying my hands.", "Me estoy secando las manos." }, 2,
                         new question(new string[]{"I am cutting the potato.", "Estoy cortando la papa." }, 3,
