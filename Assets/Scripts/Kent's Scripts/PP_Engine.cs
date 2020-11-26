@@ -32,6 +32,10 @@ public class PP_Engine : MonoBehaviour
     public GameObject voiceButton;
     public GameObject typeButton;
     public GameObject typeField;
+    bool checking = false;
+    bool correct = false;
+    bool fluctuate = true;
+    int fluctuatenum;
 
 
 
@@ -42,10 +46,11 @@ public class PP_Engine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        fluctuatenum = 10;
         responseType = PlayerPrefs.GetInt("responseType");
         if (responseType == 0)
         {
-            voiceButton.SetActive(false);
+            //voiceButton.SetActive(false);
         }
         else if(responseType == 1)
         {
@@ -81,6 +86,76 @@ public class PP_Engine : MonoBehaviour
         water.SetActive(true);
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            check();
+        }
+
+        if (correct == true && checking == true && fluctuatenum > 0)
+        {
+            //Make score glow green
+            if (score.color.r > 0.3f && fluctuate == true)
+            {
+                score.color = new Color(score.color.r - 0.1f, 1, score.color.b - 0.1f, 1);
+                    
+                if (score.color.r <= 0.3f)
+                {
+                    fluctuate = false;
+                    fluctuatenum--;
+                }
+            }
+
+            //Set back to white
+            else if (score.color.r < 1 && fluctuate == false)
+            {
+                score.color = new Color(score.color.r + 0.1f, 1, score.color.b + 0.1f, 1);
+
+                if (score.color.r >= 1)
+                {
+                    fluctuate = true;
+                    fluctuatenum--;
+                }
+            }
+        }
+
+        else if (correct == false && checking == true && fluctuatenum > 0)
+        {
+                //Make score glow red
+                if (score.color.g > 0.3f && fluctuate == true)
+                {
+                    score.color = new Color(1, score.color.g - 0.1f, score.color.b - 0.1f, 1);
+
+                    if (score.color.g <= 0.3f)
+                    {
+                        fluctuate = false;
+                        fluctuatenum--;
+                    }
+                }
+                
+                //Set back to white
+                else if (score.color.g < 1 && fluctuate == false)
+                {
+                    score.color = new Color(1, score.color.g + 0.1f, score.color.b + 0.1f, 1);
+
+                    if (score.color.g >= 1)
+                    {
+                        fluctuate = true;
+                        fluctuatenum--;
+                    }
+                }    
+        }
+
+        Debug.Log(score.color);
+
+        if (fluctuatenum <= 0)
+        {
+            fluctuatenum = 10;
+            checking = false;
+        }
+    }
+
     public void changeQA()
     {
         if (points == playTo)
@@ -98,6 +173,7 @@ public class PP_Engine : MonoBehaviour
 
     public void check()
     {
+        checking = true;
         string temp = reply.text.ToLower();
         byte[] bites = Encoding.Default.GetBytes(temp.Trim());
         string raw = BitConverter.ToString(bites);
@@ -111,17 +187,22 @@ public class PP_Engine : MonoBehaviour
         if (raw2.Equals(raw.Substring(0, raw.Length - 9)))
         {
             rightSFX.Play();
+            correct = true;
             StartCoroutine(timer.resetTimer());
             timer.changeQueued = true;
             points++;
-            score.text = "Score: " + points.ToString();
+            score.text = "Score: " + points.ToString();          
             voiceClips[getIndex()].Play(1);
             StartCoroutine(sitTight());
         }
         else
         {
             wrongSFX.Play();
+            correct = false;
             score.text = "Wrong";// + "\n" + answer + "\n" + raw.Substring(0,raw.Length - 9) + "\n#\n" + raw2;
+
+            //Make score glow red
+            //score.text
         }
     }
 

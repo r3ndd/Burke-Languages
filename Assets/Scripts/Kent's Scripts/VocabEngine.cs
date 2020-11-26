@@ -26,7 +26,11 @@ public class VocabEngine : MonoBehaviour
     public AudioSource rightSFX;
     public AudioSource wrongSFX;
     bool clipQueued = false;
-    
+    bool checking = false;
+    bool correctAnswer = false;
+    bool fluctuate = true;
+    int fluctuatenum;
+
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +42,72 @@ public class VocabEngine : MonoBehaviour
         voiceClips[7].Play();
         setUpQuestion();
         water.SetActive(true);
+        fluctuatenum = 10;
+    }
+
+    void Update()
+    {
+        Debug.Log(correctAnswer + " " + checking + fluctuatenum);
+
+        if (correctAnswer == true && checking == true && fluctuatenum > 0)
+        {
+            //Make score glow green
+            if (right.color.r > 0.3f && fluctuate == true)
+            {
+                right.color = new Color(right.color.r - 0.1f, 1, right.color.b - 0.1f, 1);
+
+                if (right.color.r <= 0.3f)
+                {
+                    fluctuate = false;
+                    fluctuatenum--;
+                }
+            }
+
+            //Set back to white
+            else if (right.color.r < 1 && fluctuate == false)
+            {
+                right.color = new Color(right.color.r + 0.1f, 1, right.color.b + 0.1f, 1);
+
+                if (right.color.r >= 1)
+                {
+                    fluctuate = true;
+                    fluctuatenum--;
+                }
+            }
+        }
+
+        else if (correctAnswer == false && checking == true && fluctuatenum > 0)
+        {
+            //Make score glow red
+            if (wrong.color.g > 0.3f && fluctuate == true)
+            {
+                wrong.color = new Color(1, wrong.color.g - 0.1f, wrong.color.b - 0.1f, 1);
+
+                if (wrong.color.g <= 0.3f)
+                {
+                    fluctuate = false;
+                    fluctuatenum--;
+                }
+            }
+
+            //Set back to white
+            else if (wrong.color.g < 1 && fluctuate == false)
+            {
+                wrong.color = new Color(1, wrong.color.g + 0.1f, wrong.color.b + 0.1f, 1);
+
+                if (wrong.color.g >= 1)
+                {
+                    fluctuate = true;
+                    fluctuatenum--;
+                }
+            }
+        }
+
+        if (fluctuatenum <= 0)
+        {
+            fluctuatenum = 10;
+            checking = false;
+        }
     }
 
     private void setUpQuestion()
@@ -87,8 +157,10 @@ public class VocabEngine : MonoBehaviour
 
     public void check0()
     {
+        checking = true;
         if(buttonIndex == 0)
         {
+            correctAnswer = true;
             correct++;
             right.text = correct.ToString();
             rightSFX.Play();
@@ -99,6 +171,7 @@ public class VocabEngine : MonoBehaviour
         }
         else
         {
+            correctAnswer = false;
             incorrect++;
             wrong.text = incorrect.ToString();
             wrongSFX.Play();
@@ -107,8 +180,10 @@ public class VocabEngine : MonoBehaviour
     }
     public void check1()
     {
+        checking = true;
         if (buttonIndex == 1)
         {
+            correctAnswer = true;
             correct++;
             right.text = correct.ToString();
             rightSFX.Play();
@@ -119,6 +194,7 @@ public class VocabEngine : MonoBehaviour
         }
         else
         {
+            correctAnswer = false;
             incorrect++;
             wrong.text = incorrect.ToString();
             wrongSFX.Play();
@@ -127,8 +203,10 @@ public class VocabEngine : MonoBehaviour
     }
     public void check2()
     {
+        checking = true;
         if (buttonIndex == 2)
         {
+            correctAnswer = true;
             correct++;
             right.text = correct.ToString();
             rightSFX.Play();
@@ -139,6 +217,7 @@ public class VocabEngine : MonoBehaviour
         }
         else
         {
+            correctAnswer = false;
             incorrect++;
             wrong.text = incorrect.ToString();
             wrongSFX.Play();
@@ -147,8 +226,10 @@ public class VocabEngine : MonoBehaviour
     }
     public void check3()
     {
+        checking = true;
         if (buttonIndex == 3)
         {
+            correctAnswer = true;
             correct++;
             right.text = correct.ToString();
             rightSFX.Play();
@@ -159,6 +240,7 @@ public class VocabEngine : MonoBehaviour
         }
         else
         {
+            correctAnswer = false;
             incorrect++;
             wrong.text = incorrect.ToString();
             wrongSFX.Play();
