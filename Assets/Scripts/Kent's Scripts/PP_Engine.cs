@@ -4,6 +4,7 @@ using System.Text;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 //this approach doesn't seem like it will work
 //instead try making a component to attach to a game object that will provide the needed data and form a node in a linked list in a series
@@ -32,10 +33,14 @@ public class PP_Engine : MonoBehaviour
     public GameObject voiceButton;
     public GameObject typeButton;
     public GameObject typeField;
-    bool checking = false;
-    bool correct = false;
-    bool fluctuate = true;
-    int fluctuatenum;
+    public GameObject x1;
+    public GameObject x2;
+    public GameObject x3;
+    private int lives = 3;
+    private bool checking = false;
+    private bool correct = false;
+    private bool fluctuate = true;
+    private int fluctuatenum;
 
 
 
@@ -147,8 +152,6 @@ public class PP_Engine : MonoBehaviour
                 }    
         }
 
-        Debug.Log(score.color);
-
         if (fluctuatenum <= 0)
         {
             fluctuatenum = 10;
@@ -164,7 +167,13 @@ public class PP_Engine : MonoBehaviour
         }
         views[getIndex()].toggleAnime(false);
         questionEngine.nextQuestion();
-        //question.text = questionEngine.currentQuestion.getText(0);
+
+        if (questionEngine.currentQuestion == null)
+        {
+            endGame();
+            return;
+        }
+
         answer = questionEngine.currentQuestion.getText(questionEngine.targetLanguage);
         cameraRigging.changeView(views[getIndex()]);
         voiceClips[7].Play();
@@ -233,16 +242,40 @@ public class PP_Engine : MonoBehaviour
 
     public IEnumerator timeIs0()
     {
+        lives--;
+
+        if (lives < 3)
+        {
+            x1.GetComponent<TextMeshProUGUI>().color = new Color32(120, 0, 0, 255);
+
+            if (lives < 2)
+            {
+                x2.GetComponent<TextMeshProUGUI>().color = new Color32(120, 0, 0, 255);
+
+                if (lives < 1)
+                    x3.GetComponent<TextMeshProUGUI>().color = new Color32(120, 0, 0, 255);
+            }
+        }
+
         wrongSFX.Play();
         yield return new WaitForSeconds(1);
         voiceClips[getIndex()].Play();
         yield return new WaitForSeconds(3);
-        changeQA();
+
+        if (lives > 0)
+            changeQA();
+        else
+            endGame();
     }
 
     IEnumerator sitTight()
     {
         yield return new WaitForSeconds(3);
         changeQA();
+    }
+
+    public void endGame()
+    {
+        Debug.Log("GAME IS OVER!");
     }
 }

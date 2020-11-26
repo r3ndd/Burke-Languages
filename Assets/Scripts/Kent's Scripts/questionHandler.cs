@@ -23,10 +23,6 @@ public class questionHandler : MonoBehaviour
     {
         numOfQuestionsToAsk--;
         currentQuestion = currentQuestion.getNext();
-        if(currentQuestion == null)
-        {
-            currentQuestion = parentQuestions[rng.Next(parentQuestions.Length)];
-        }
     }
 
 
