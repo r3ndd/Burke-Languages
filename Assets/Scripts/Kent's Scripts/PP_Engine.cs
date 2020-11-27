@@ -41,6 +41,13 @@ public class PP_Engine : MonoBehaviour
     private bool correct = false;
     private bool fluctuate = true;
     private int fluctuatenum;
+    public GameObject gamePanel;
+    public GameObject endPanel;
+    public TMPro.TextMeshProUGUI scoreTF;
+    public TMPro.TextMeshProUGUI livesTF;
+    public TMPro.TextMeshProUGUI avgTimeTF;
+    public AudioSource tickSound;
+    public float avgTime = 0;
 
 
 
@@ -89,6 +96,7 @@ public class PP_Engine : MonoBehaviour
         views[getIndex()].toggleAnime(true);
         points = 0;
         water.SetActive(true);
+        tickSound.mute = false;
     }
 
     void Update()
@@ -163,7 +171,7 @@ public class PP_Engine : MonoBehaviour
     {
         if (points == playTo)
         {
-            door.toMenu();
+            //door.toMenu();
         }
         views[getIndex()].toggleAnime(false);
         questionEngine.nextQuestion();
@@ -195,6 +203,7 @@ public class PP_Engine : MonoBehaviour
         }
         if (raw2.Equals(raw.Substring(0, raw.Length - 9)))
         {
+            avgTime = (timer.getCurrentTime() + avgTime) / 2;
             rightSFX.Play();
             correct = true;
             StartCoroutine(timer.resetTimer());
@@ -263,9 +272,14 @@ public class PP_Engine : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         if (lives > 0)
+        {
             changeQA();
+        }
         else
+        {
+            lives = 0;
             endGame();
+        }
     }
 
     IEnumerator sitTight()
@@ -277,5 +291,18 @@ public class PP_Engine : MonoBehaviour
     public void endGame()
     {
         Debug.Log("GAME IS OVER!");
+        gamePanel.SetActive(false);
+        endPanel.SetActive(true);
+        tickSound.mute = true;
+        wrongSFX.mute = true;
+        voiceClips[getIndex()].mute = true;
+        scoreTF.text = points.ToString() + "/7";
+        livesTF.text = lives.ToString() + "/3";
+        avgTimeTF.text = ((int)avgTime).ToString() + " seconds";
+    }
+
+    public void returnToMenu()
+    {
+        door.toMenu();
     }
 }

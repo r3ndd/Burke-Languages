@@ -225,4 +225,9 @@ public class CountdownTimer : MonoBehaviour
         currentTime = startTime;
         changeQueued = false;
     }
+
+    public float getCurrentTime()
+    {
+        return currentTime;
+    }
 }
