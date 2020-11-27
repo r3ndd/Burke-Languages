@@ -62,9 +62,9 @@ public class PP_Engine : MonoBehaviour
         responseType = PlayerPrefs.GetInt("responseType");
         if (responseType == 0)
         {
-            //voiceButton.SetActive(false);
+            voiceButton.SetActive(false);
         }
-        else if(responseType == 1)
+        else if (responseType == 1)
         {
             typeButton.SetActive(false);
             typeField.SetActive(false);
@@ -112,7 +112,7 @@ public class PP_Engine : MonoBehaviour
             if (score.color.r > 0.3f && fluctuate == true)
             {
                 score.color = new Color(score.color.r - 0.1f, 1, score.color.b - 0.1f, 1);
-                    
+
                 if (score.color.r <= 0.3f)
                 {
                     fluctuate = false;
@@ -135,29 +135,29 @@ public class PP_Engine : MonoBehaviour
 
         else if (correct == false && checking == true && fluctuatenum > 0)
         {
-                //Make score glow red
-                if (score.color.g > 0.3f && fluctuate == true)
-                {
-                    score.color = new Color(1, score.color.g - 0.1f, score.color.b - 0.1f, 1);
+            //Make score glow red
+            if (score.color.g > 0.3f && fluctuate == true)
+            {
+                score.color = new Color(1, score.color.g - 0.1f, score.color.b - 0.1f, 1);
 
-                    if (score.color.g <= 0.3f)
-                    {
-                        fluctuate = false;
-                        fluctuatenum--;
-                    }
+                if (score.color.g <= 0.3f)
+                {
+                    fluctuate = false;
+                    fluctuatenum--;
                 }
-                
-                //Set back to white
-                else if (score.color.g < 1 && fluctuate == false)
-                {
-                    score.color = new Color(1, score.color.g + 0.1f, score.color.b + 0.1f, 1);
+            }
 
-                    if (score.color.g >= 1)
-                    {
-                        fluctuate = true;
-                        fluctuatenum--;
-                    }
-                }    
+            //Set back to white
+            else if (score.color.g < 1 && fluctuate == false)
+            {
+                score.color = new Color(1, score.color.g + 0.1f, score.color.b + 0.1f, 1);
+
+                if (score.color.g >= 1)
+                {
+                    fluctuate = true;
+                    fluctuatenum--;
+                }
+            }
         }
 
         if (fluctuatenum <= 0)
@@ -209,7 +209,7 @@ public class PP_Engine : MonoBehaviour
             StartCoroutine(timer.resetTimer());
             timer.changeQueued = true;
             points++;
-            score.text = "Score: " + points.ToString();          
+            StartCoroutine(correctText());
             voiceClips[getIndex()].Play(1);
             StartCoroutine(sitTight());
         }
@@ -231,14 +231,21 @@ public class PP_Engine : MonoBehaviour
             score.text = _score.ToString();
             if (_score > 0.5f)
             {
-                score.text = "Correct: " + _score.ToString();
+                avgTime = (timer.getCurrentTime() + avgTime) / 2;
                 rightSFX.Play();
-                changeQA();
+                correct = true;
+                StartCoroutine(timer.resetTimer());
+                timer.changeQueued = true;
+                points++;
+                StartCoroutine(correctText());
+                voiceClips[getIndex()].Play(1);
+                StartCoroutine(sitTight());
             }
             else
             {
                 wrongSFX.Play();
-                score.text = "Incorrect: " + _score.ToString();
+                correct = false;
+                score.text = "Wrong";
             }
         });
     }
@@ -303,5 +310,12 @@ public class PP_Engine : MonoBehaviour
     public void returnToMenu()
     {
         door.toMenu();
+    }
+
+    IEnumerator correctText()
+    {
+        score.text = "CORRECT!";
+        yield return new WaitForSeconds(1);
+        score.text = "Score: " + points.ToString();
     }
 }
