@@ -290,7 +290,6 @@ public class PP_Engine : MonoBehaviour
 
     public void endGame()
     {
-        Debug.Log("GAME IS OVER!");
         gamePanel.SetActive(false);
         endPanel.SetActive(true);
         tickSound.mute = true;
