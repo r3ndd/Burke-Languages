@@ -39,6 +39,7 @@ public class PP_Engine : MonoBehaviour
     private int lives = 3;
     private bool checking = false;
     private bool correct = false;
+    public GameObject correctPopUp;
     private bool fluctuate = true;
     private int fluctuatenum;
     public GameObject gamePanel;
@@ -169,6 +170,7 @@ public class PP_Engine : MonoBehaviour
 
     public void changeQA()
     {
+        correctPopUp.SetActive(false);
         if (points == playTo)
         {
             //door.toMenu();
@@ -205,6 +207,7 @@ public class PP_Engine : MonoBehaviour
         {
             avgTime = (timer.getCurrentTime() + avgTime) / 2;
             rightSFX.Play();
+            correctPopUp.SetActive(true);
             correct = true;
             StartCoroutine(timer.resetTimer());
             timer.changeQueued = true;
@@ -314,8 +317,8 @@ public class PP_Engine : MonoBehaviour
 
     IEnumerator correctText()
     {
-        score.text = "CORRECT!";
-        yield return new WaitForSeconds(1);
+        //score.text = "CORRECT!";
+        yield return new WaitForSeconds(0);
         score.text = "Score: " + points.ToString();
     }
 }
